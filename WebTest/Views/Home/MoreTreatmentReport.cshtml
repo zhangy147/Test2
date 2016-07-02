@@ -1,0 +1,77 @@
+﻿@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    ViewBag.Title = "MoreTreatmentReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>@Resources.BestTreatmentReport</h4>
+    </div>
+    <div class="panel-body">
+        <p>@Resources.TreatmentReportOverview</p>
+    </div>
+</div>
+<!--tabs-->
+<div class="panel">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active"><a href="#overview" data-toggle="tab"><i class="glyphicon glyphicon-asterisk"></i> @Resources.TreatmentReportIntroduction</a></li>
+        <li><a href="#sample" data-toggle="tab"><i class="glyphicon glyphicon-comment"></i> @Resources.TreatmentReportSample</a></li>
+        <li><a href="#procedures" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i> @Resources.TreatmentReportProcedures</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active well" id="overview">
+            @if (culture.Equals("zh"))
+            {
+                @Html.Partial("_TreatmentReport_zh")
+            }
+            else
+            {
+                @Html.Partial("_TreatmentReport")
+            }
+        </div>
+        <div class="tab-pane well" id="sample">
+            @if (culture.Equals("zh"))
+            {
+                <embed src="../Files/PDF/sample_colon_ca_zh.pdf" type="application/pdf" style="width:800px;height:1000px;"></embed>
+            }
+            else
+            {
+                <embed src="/Files/PDF/sample_colon_ca.pdf" type="application/pdf" style="width:90%;height:1000px;"></embed>
+            }
+        </div>
+        <div class="tab-pane well" id="procedures">
+            <br />
+            @if (culture.Equals("zh"))
+            {
+                <img src="../images/TreatmentReportWorkProcessZh.gif" alt="Treatment Report Work Procedure">
+            }
+            else
+            {
+                <img src="../images/TreatmentReportWorkProcess.gif" alt="Treatment Report Work Procedure">
+            }
+        </div>
+    </div>
+    @Html.ActionLink(Resources.Enter, "Index", "PatientProfile", routeValues: null, htmlAttributes: new { @class = "btn btn-default load-page" })
+</div>
+<!--/tabs-->
+@Html.Partial("_PageLoader")
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        $(document).ready(function () {
+
+            //$("#service").click(function (e) {
+            //    var href = $(this).attr("href");
+            //    $(this).attr("href", href + "?serviceId=1")
+            //});
+
+            $(".load-page").click(function (e) {
+                $('#page-loader').modal('show');
+            });
+
+        });
+    </script>
+}
+

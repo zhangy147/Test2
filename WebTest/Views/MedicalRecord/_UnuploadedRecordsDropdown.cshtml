@@ -1,0 +1,11 @@
+﻿<form name="#" action="#select">
+    <select>
+        @*@Html.DropDownList("MedicalRecordID", (SelectList)Model, new { @class = "form-control" })*@
+        <option value="0">Select a record ...</option>
+        @foreach (var item in (SelectList)Model)
+        {
+            <option value="@item.Value">@item.Text</option>
+        }
+    </select>
+    @Html.Hidden("target", "MedicalRecordID")
+</form>

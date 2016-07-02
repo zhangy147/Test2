@@ -1,0 +1,48 @@
+﻿@model WebTest.ViewModels.PatientFamilyDiseaseHistoryViewData
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "social_history_tab";
+    options.InsertionMode = InsertionMode.Replace;
+
+}
+@using (Ajax.BeginForm("SaveFamilyHistory", "MedicalHistory", options))
+{
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th class="col-md-2">Disease</th>
+                    @foreach (var fMember in Model.FamilyMembers)
+                    {
+                        <th class="col-md-1">@Html.DisplayFor(s => fMember)</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+               
+                 @for (var i = 0; i < Model.FamilyDiseaseHistories.Count(); i++ )
+                 {
+                    <tr>
+                        <td class="col-md-2">
+                        @Html.DisplayFor(s => Model.FamilyDiseaseHistories[i].DiseaseName)
+                        @Html.HiddenFor(s => Model.FamilyDiseaseHistories[i].DiseaseName)
+                    </td>
+                        @for (var j = 0; j < Model.FamilyDiseaseHistories[i].MemberDiseaseHistories.Count(); j++ )
+                        {
+                            <td class="col-md-1">
+                                <div class="checkbox">
+                                    @Html.HiddenFor(a => Model.FamilyDiseaseHistories[i].MemberDiseaseHistories[j].Member)
+                                    @Html.CheckBoxFor(s => Model.FamilyDiseaseHistories[i].MemberDiseaseHistories[j].HasDiagnosed)
+                                </div>
+                            </td>
+                        }
+                    </tr>
+                 }
+            </tbody>
+        </table>
+}

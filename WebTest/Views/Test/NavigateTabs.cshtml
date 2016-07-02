@@ -1,0 +1,284 @@
+﻿@{
+    ViewBag.Title = "ProcessStep";
+}
+@Styles.Render("~/Content/jquery-ui.css")
+@Styles.Render("~/Content/request-step.css")
+@Styles.Render("~/Content/fileinput.min.css")
+
+<div class="container" style="margin-top: 0px; margin-bottom: 10px;">
+    @*<div class="row">*@
+    <div class="row step">
+        <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-1');">
+            <i class="glyphicon glyphicon-plus"></i>
+            <p>Step 1. Create Patient Profile</p>
+        </div>
+        <div  id="div2" class="col-md-2" onclick="javascript: resetActive(event, 20, 'step-2');">
+            <i class="glyphicon glyphicon-pencil"></i>
+            <p>Step 2. Fill Out Medical History</p>
+        </div>
+        <div class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');">
+            <i class="glyphicon glyphicon-upload"></i>
+            <p>Step 3. Upload Medical Records</p>
+        </div>
+   
+        @*</div>*@
+    </div>
+
+
+
+    <div class="row setup-content activeStepInfo" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12 well" id="step-1-content">
+
+                <ul class="nav nav-tabs" id="createNotTab-step-1">
+                    <li class="active"><a href="#tab1_step1" data-toggle="tab">Procedures Received</a></li>
+                    <li class="disabled"><a href="#tab1_step2" data-toggle="">State of Disease</a></li>
+                    <li class="disabled"><a href="#tab1_step3" data-toggle="">Pre-Treatment Evaluation</a></li>
+                    <li class="disabled"><a href="#tab1_step4" data-toggle="">Overall Health</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active well" id="tab1_step1">
+                        <p>STEP 1</p>
+                        <form name="Step1Form"></form>
+                    </div>
+                    <div class="tab-pane well" id="tab1_step2">
+                        <p>STEP 2</p>
+                        <form name="Step2Form" id="Step2Form">
+                            <input type="text" name="text_input" />
+                            <input type="checkbox" name="checkbox_input" />GO
+                            <input type="radio" name="radio_input" value="Go"/>GO
+                            <input type="radio" name="radio_input" value="Stag"/>STAY
+                            <select>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="tab-pane well" id="tab1_step3">
+                        <p>STEP 3</p>
+                        <form name="Step3Form"></form>
+                    </div>
+                    <div class="tab-pane well" id="tab1_step4">
+                        <p>STEP 4</p>
+                        <form name="Step4Form"></form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content  hiddenStepInfo" id="step-2">
+        <div class="col-xs-12">
+            <div class="col-md-12 well" id="step-2-content">
+
+                <ul class="nav nav-tabs" id="createNotTab-step-2">
+                    <li class="active"><a href="#tab2_step1" data-toggle="tab">Procedures Received</a></li>
+                    <li class="disabled"><a href="#tab2_step2" data-toggle="">State of Disease</a></li>
+                    <li class="disabled"><a href="#tab2_step3" data-toggle="">Pre-Treatment Evaluation</a></li>
+                    <li class="disabled"><a href="#tab2_step4" data-toggle="">Overall Health</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active well" id="tab2_step1">
+                        <p>TAB2, STEP 1</p>
+                        <form name="Tab2Step1Form" id="Tab2Step1Form">
+                            <input type="text" name="text_input" />
+                            <input type="checkbox" name="checkbox_input" />GO
+                            <select>
+                                <option value="1">Shi Ying</option>
+                                <option value="2">Jiang Fang</option>
+                                <option value="3">Zhongmin</option>
+                            </select>
+                        </form>
+</div>
+                    <div class="tab-pane well" id="tab2_step2">
+                        <p>TAB2, STEP 2</p>
+                        <form name="myTest"></form>
+                    </div>
+                    <div class="tab-pane well" id="tab2_step3">
+                        <p>TAB2, STEP 3</p>
+                    </div>
+                    <div class="tab-pane well" id="tab2_step4">
+                        <p>TAB2, STEP 4</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content  hiddenStepInfo" id="step-3">
+        <div class="col-xs-12">
+            <div class="col-md-12 well" id="step-3-content">
+                <label class="control-label">Select File</label>
+                <input id="input-21" name="input-21[]" type="file"  multiple class="file-loading" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button class="btn btn-warning" type="button" onclick="return showPrev()">
+        <span class="glyphicon glyphicon-arrow-left"></span> Previous
+    </button>
+    <button class="btn btn-warning" type="button" onclick="return showNext()">
+        <span class="glyphicon glyphicon-arrow-right"></span> Next
+    </button>
+</div>
+    
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/Scripts/FileInput/canvas-to-blol.min.js")
+        @Scripts.Render("~/Scripts/FileInput/fileinput.min.js")
+
+        <script type="text/javascript">
+            $(document).on('ready', function () {
+                $("#input-21").fileinput({
+                    maxFileCount: 3,
+                    validateInitialCount: true,
+                    overwriteInitial: false,
+                    previewFileType: "image",
+                    previewClass: "bg-warning",
+                    allowedFileExtension: ["jpg", "gif", "png"],
+                    browseClass: "btn btn-success",
+                    browseLabel: "Pick Image",
+                    browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i>",
+                    removeClass: "btn btn-danger",
+                    removeLabel: "Delete",
+                    removeIcon: "<i class=\"glyphicon glyphicon-trash\"></i>",
+                    uploadClass: "btn btn-info",
+                    uploadLabel: "Upload",
+                    uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i>"
+                });
+            });
+            $("input, select, textarea").change(function () {
+                alert("form changed");
+            });
+            //$('select').on('change', function () {
+            //    alert("form changed");
+            //});
+            //$('input').on('keyup change', function () {
+            //    alert("form changed");
+            //});
+            function resetActive(event, percent, step) {
+                alert("reset is clicked");
+               
+                alert('event.target.className=' + event.target.className);
+                var $steps = $(".row.step div");
+                //
+                $steps.each(function () {
+                    if ($(this).hasClass("activestep")) {
+                        $(this).removeClass("activestep");
+                    }
+                });
+
+                //var $steps = $(".row.step div");
+                alert("step =" + step);
+                var $target = $('.row.step div:eq(' + (2-1) + ')');
+                //var $target = $(event.target);
+                //if (event.target.className != "col-md-2") {
+                //    $target = $(event.target.parentNode);
+                //}
+                alert("target =" + $target.attr('id'));
+
+
+                if (event.target.className == "col-md-2") {
+                    $(event.target).addClass("activestep");
+                }
+                else {
+                    $(event.target.parentNode).addClass("activestep");
+                }
+
+                hideSteps();
+                showCurrentStepInfo(step);
+            }
+
+            function hideSteps() {
+                var $setup_contents = $(".row.setup-content");
+                //$("div").each(function () {
+                $setup_contents.each(function () {
+                    if ($(this).hasClass("activeStepInfo")) {
+                        $(this).removeClass("activeStepInfo");
+                        $(this).addClass("hiddenStepInfo");
+                        alert('hideStepa is called');
+                    }
+                });
+            }
+
+            //var $tabs = $('#createNotTab-step-1 li')
+            var $tabs = $("#step-1-content ul:first li")
+            var currStep = 'step-1'
+            var $steps = $(".row.step div")
+
+            function showCurrentStepInfo(step) {
+                var id = "#" + step;
+                $(id).addClass("activeStepInfo");
+                //loadStep(step);
+
+                alert('step is activated=' + step);
+
+                $tabs = $('#createNotTab-' + step + ' li');
+                currStep = step;
+            }
+
+
+            //var $tabs = $('#createNotTab li');
+
+
+            function showPrev() {
+                //alert("curr index=" + $tabs.filter('.active').index());
+                alert("step length=" + $steps.length);
+                alert("prev index=" + $tabs.filter('.active').prev('li').index());
+                if ($tabs.filter('.active').prev('li').index() == -1) {
+                    if (currStep == 'step-2') {
+                        //alert('last index of step-2 is clicked');
+                        //resetActive("onclick", 2, 'step-1');
+                        $('#div1').click();
+                    }
+                } else {
+                    var tabid = $tabs.filter('.active').find('a').attr('href');
+                    alert(tabid);
+                    var frm = $(tabid + " form");
+                    //alert(frm.attr('name'));
+                    //var tabfm = $frm.attr('name');
+                    //alert(tabfm);
+                    $tabs.filter('.active').prev('li').removeClass("disabled");
+                    $tabs.filter('.active').prev('li').find('a[data-toggle]').each(function () {
+                        $(this).attr("data-toggle", "tab");
+                    });
+
+                    $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
+
+                    $tabs.filter('.active').next('li').find('a[data-toggle="tab"]').each(function () {
+                        $(this).attr("data-toggle", "").parent('li').addClass("disabled");
+                    })
+                 }
+            }
+
+            function showNext() {
+                alert("step length=" + $steps.filter('.activestep').index());
+                alert("next step=" + $steps.filter('.activestep').next('div').index());
+                //alert("curr index=" + $tabs.filter('.active').index());
+               //alert("next index=" + $tabs.filter('.active').next('li').index());
+               if ($tabs.filter('.active').next('li').index() == -1) {
+                   if (currStep == 'step-1') {
+                       alert('last index of step-2 is clicked');
+                       //resetActive("onclick", 2, 'step-1');
+                       $('#div2').click();
+                   }
+               } else {
+                    $tabs.filter('.active').next('li').removeClass("disabled");
+                    $tabs.filter('.active').next('li').find('a[data-toggle]').each(function () {
+                        $(this).attr("data-toggle", "tab");
+                    });
+
+                    $tabs.filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
+
+                    $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').each(function () {
+                        $(this).attr("data-toggle", "").parent('li').addClass("disabled");;
+                    })
+               }
+            }
+        </script>
+        }

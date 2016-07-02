@@ -1,0 +1,18 @@
+﻿<ul class="nav nav-tabs" id="upload_records_tabs">
+    <li class="active"><a href="#required_records_tab" data-toggle="tab">@Resources.ProfileTabRequiredRecords</a></li>
+    <li class="disabled"><a href="#upload_record_tab" data-toggle="">@Resources.ProfileTabUploadRecord</a></li>
+    <li class="disabled"><a href="#uploaded_records_tab" data-toggle="">@Resources.ProfileTabUploadedRecords</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active well" id="required_records_tab">
+        @*@Html.Action("GetRequiredMedicalRecords", "MedicalRecord")*@
+    </div>
+    <div class="tab-pane well" id="upload_record_tab">
+        @*@Html.Action("ShowUploadMedicalRecord", "MedicalRecord")*@
+    </div>
+    <div class="tab-pane well" id="uploaded_records_tab">
+        @*@Html.Action("GetUploadedMedicalRecords", "MedicalRecord")*@
+    </div>
+    
+</div>
+

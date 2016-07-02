@@ -1,0 +1,74 @@
+﻿@model WebTest.ViewModels.PatientProfileDiseaseViewData
+@Styles.Render("~/Content/jquery-ui.css")
+@using (Html.BeginForm("AutoCompleteDiseaseName", "Test", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.DiseaseName, new { @class = "control-label" })
+            <div class="input-group">
+                @Html.TextBoxFor(model => model.DiseaseName, new { @class = "form-control", @id = "disease-name", @placeholder = "[Name of disease]" })
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Go!</button>
+                </span>
+            </div>
+            <span class="help-block">Only diseases their names popup are supported.</span>
+            @Html.ValidationMessageFor(model => model.DiseaseID)
+
+            <div class="input-group">
+                @Html.TextBoxFor(model => model.DateDiagnosed, new { @class = "monthpicker form-control", @placeholder = "[Month and year diagnosed]" })
+                @Html.ValidationMessageFor(model => model.DateDiagnosed)
+            </div>
+            @*<div class="input-group">
+                @Html.TextBoxFor(model => model.Hospital, new { @class = "form-control",  @placeholder = "[Name of hospital]" })
+                @Html.ValidationMessageFor(model => model.Hospital)
+            </div>*@
+
+
+
+
+        </div>
+        @Html.HiddenFor(model => model.DiseaseID)
+    </div>
+}
+
+
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jqueryui")
+
+        <script>
+            $(function () {
+
+                var cache = {};
+
+                $("#disease-name").autocomplete({
+                    minLength: 2,
+                    source: function (request, response) {
+                        var term = request.term;
+                        if (term in cache) {
+                            response(cache[term]);
+                            return;
+                        }
+                        $.getJSON("/PatientProfile/GetDiseaseNameList", { term: $("#disease-name").val() }, function (data, status, xhr) {
+                            //alert(data);
+                            cache[term] = data;
+                            response(data);
+                        });
+                    },
+                    select: function (event, ui) {
+                        //works fine
+                        $("#DiseaseID").val(ui.item.id);
+                    }
+                });
+
+                $('input.monthpicker').monthpicker();
+
+            })(jQuery);
+        </script>
+<script src="~/Scripts/jquery.ui.monthpicker.js"></script>
+    }
+

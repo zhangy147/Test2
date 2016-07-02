@@ -1,0 +1,58 @@
+﻿@model WebTest.ViewModels.DiseaseViewData
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "patient_tab";
+    options.InsertionMode = InsertionMode.Replace;
+}
+@using (Ajax.BeginForm("SaveDiseaseInformation", "PatientProfile", options))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiseaseName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DiseaseName, new { @class="form-control", id="disease-name", placeholder=Resources.PlaceHolderNameOfDisease})
+                @Html.ValidationMessageFor(model => model.DiseaseName)
+                @Html.HiddenFor(model => model.DiseaseID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateDiagnosed, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DateDiagnosed, new { @class = "monthpicker form-control", @placeholder = Resources.PlaceHolderMonthAndYearDiagnosed })
+                @Html.ValidationMessageFor(model => model.DateDiagnosed)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Concerns, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Concerns, new { @class = "form-control", @rows = "3" })
+                @Html.ValidationMessageFor(model => model.Concerns)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Goals, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Goals, new { @class = "form-control", @rows = "3" })
+                @Html.ValidationMessageFor(model => model.Goals)
+            </div>
+        </div>*@
+    </div>
+    
+    
+    
+    
+}

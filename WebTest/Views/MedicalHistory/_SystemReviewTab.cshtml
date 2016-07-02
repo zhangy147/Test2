@@ -1,0 +1,47 @@
+﻿@model List<WebTest.ViewModels.SystemReviewViewData>
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "family_history_tab";
+    options.InsertionMode = InsertionMode.Replace;
+
+}
+@using (Ajax.BeginForm("SaveSystemReview", "MedicalHistory", options))
+{
+<div class="editor-field">
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                @{
+    int cnt = 0;
+    for (int i = 0; i < Model.Count(); i++)
+    {
+        if (cnt++ % 3 == 0)
+        {
+            @:</tr><tr>
+                }
+                <td style="vertical-align:top">
+                    <h6>@Model[i].SystemName </h6>
+                    @*@foreach (var sym in Model[i].SymptomReviewViewDataList)*@
+                    @for (int j = 0; j < Model[i].SymptomReviewViewDataList.Count(); j++)
+                    {
+                        <div>
+                            @*<input type="checkbox" name="selectedCourses" value="@Model[i].SymptomReviewViewDataList[j].DiagnosticFactorID" @(Html.Raw(sym.IsSelected ? " checked=\"checked\"" : "")) />*@
+                            @Html.HiddenFor(s => Model[i].SymptomReviewViewDataList[j].DiagnosticFactorID)
+                            @Html.CheckBoxFor(s => Model[i].SymptomReviewViewDataList[j].IsSelected)
+                            @Model[i].SymptomReviewViewDataList[j].SymtomName
+                        </div>
+                    }
+                </td>
+    }
+                }
+            </tr>
+        </tbody>
+        </table>
+    </div>
+}

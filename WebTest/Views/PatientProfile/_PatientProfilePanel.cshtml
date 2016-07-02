@@ -1,0 +1,12 @@
+﻿<ul class="nav nav-tabs" id="patient_profile_tabs">
+    <li class="active"><a href="#diagnosis_tab" data-toggle="tab">@Resources.ProfileTabDiagnosis</a></li>
+    <li class="disabled" id="li_factors"><a href="#patient_tab" data-toggle="">@Resources.ProfileTabPatient</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active well" id="diagnosis_tab">
+        @Html.Action("GetDiseaseInformation", "PatientProfile")
+    </div>
+    <div class="tab-pane well" id="patient_tab">
+        @*@Html.Action("GetPatientInformation", "PatientProfile")*@
+    </div>
+</div>

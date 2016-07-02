@@ -1,0 +1,211 @@
+﻿@model WebTest.ViewModels.ServiceManagerViewData
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/jquery-ui.css")
+@Styles.Render("~/Content/fileinput.min.css")
+<div class="container-fluid">
+    <div class="row no-pad">
+        <div class="col-sm-3">
+            <div class="well well-sm alert alert-info" style="padding: 20px;">
+                <p><strong>Diagnosis:</strong> Diverticulosis</p>
+                <p><strong>Patient:</strong> 67 years old female</p>
+                <br />
+                <a class="btn btn-primary pull-right"><i class="glyphicon glyphicon-open"></i> Open New</a>
+                <br />
+            </div>
+            <div class="panel panel-default">
+                <ul class="nav nav-stacked">
+                    <li class="nav-header">
+                        <a href="#" data-toggle="collapse" data-target="#userMenu"><strong>State of Disease</strong> <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul class="nav nav-stacked collapse in" id="userMenu">
+                            <li class="active">
+                                <a href="#">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-info-sign"></i> Current Condition</a>
+                            </li>
+                            <li>
+                                <a href="#">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-comment"></i> General Health</a>
+                            </li>
+                            <li>
+                                <a href="#">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-pushpin"></i> Received Procedures</a>
+                            </li>
+                            <li>
+                                <a href="#">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-heart"></i> Received Treatments</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">
+                        <a href="#" data-toggle="collapse" data-target="#menu2"> <strong>Medical History</strong> <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul class="nav nav-stacked collapse in" id="menu2">
+                            <li>
+                                <a href="#" onclick="javascript:loadPage('disease_history')">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-heart"></i> Disease History</a>
+                            </li>
+                            <li>
+                                <a href="#">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-camera"></i> Syste Review</a>
+                            </li>
+                            <li>
+                                <a href="#">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-flag"></i> Social History</a>
+                            </li>
+                            <li>
+                                <a href="#">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-glass"></i> Family History</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">
+                        <a href="#" data-toggle="collapse" data-target="#menu3"> <strong>Medical Records</strong> <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul class="nav nav-stacked collapse in" id="menu3">
+                            <li><a href="">&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-record"></i> Uploaded Records</a></li>
+                        </ul>
+                    </li>
+                </ul> <!-- /nav nav-stacked -->
+            </div> <!-- /well -->
+        </div>
+        <!-- /col-3 -->
+        <div class="col-sm-9" style="">
+            <div class="col-md-9" style="">
+                <div class="well well-sm" id="toolbar" style="border: 1px solid #4DA7A7">
+                    <ul class="list-inline">
+                        <li><a href="#" class="btn col-sm-3" onclick="javascript:loadPage('upload_record')"><i class="glyphicon glyphicon-upload"></i><br /><span>Upload File</span></a></li>
+                        <li><a href="#" class="btn col-sm-3" onclick="javascript:loadPage('live_chat')"><i class="glyphicon glyphicon-new-window"></i><br /><span> Live Chat</span></a></li>
+                        <li><a href="#" class="btn col-sm-3" onclick="javascript:loadPage('ask_question')"><i class="glyphicon glyphicon-plus-sign"></i><br /><span> Ask Question</span></a></li>
+                        @*<li><a href="#"><i class="glyphicon glyphicon-print"></i><span class="count"> Print My Case</span></a></li>*@
+                        <li><a href="#" class="btn col-sm-3" onclick="javascript:loadPage('print_case')"><i class="glyphicon glyphicon-print"></i><br /> Print My Case</a></li>
+                    </ul>
+                </div><!-- /toolbar -->
+
+                <div class="panel panel-default" id="window-main" style="@*background-color: #a2aea5*@">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Suggested Reading<span class="badge pull-right">13</span></div>
+                        <div class="panel-body">(reading links here)</div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Questions & Answers</div>
+                        <div class="panel-body">(listed answers here)</div>
+                    </div>
+                </div><!-- /window-main-->
+
+            </div> <!-- /col-9 -->
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Your Messages</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            This is a dismissable alert.. just sayin'.
+                        </div>
+                        <p>This is a dashboard-style layout that uses Bootstrap 3. You can use this template as a starting point to create something more unique.</p>
+                        <p>Visit the Bootstrap Playground at <a href="http://bootply.com">Bootply</a> to tweak this layout or discover more useful code snippets.</p>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Your Reports</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p><a href="#"><img src="~/Images/pdf_file.png" /></a></p>
+                        <p>@Html.ActionLink("Download", "DisplayPDF")</p>
+                        <p>@Ajax.ActionLink("Browser", "GetPDFPartialView", new AjaxOptions { UpdateTargetId = "window-main" })</p>
+                        <p>@Html.ActionLink("Get PDF On Fly", "CreatePdfOnFly")</p>
+                    </div>
+                </div>
+            </div> <!-- /col-3 -->
+        </div> <!-- /col-9 -->
+    </div> <!-- /row -->
+</div> <!-- /container-fluid -->
+@Html.Partial("_PageLoader")
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/Scripts/jquery.ui.monthpicker.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+    @Scripts.Render("~/Scripts/FileInput/canvas-to-blol.min.js")
+    @Scripts.Render("~/Scripts/FileInput/fileinput.min.js")
+    <script type="text/javascript">
+        $(document).on('ready', function () {
+      
+        });
+        //
+        $(document).on('focus', 'input.monthpicker', function () {
+            $('input.monthpicker').monthpicker({
+                monthNamesShort: ['@Resources.MonthPickerJan', '@Resources.MonthPickerFeb', '@Resources.MonthPickerMar', '@Resources.MonthPickerApr', '@Resources.MonthPickerMay', '@Resources.MonthPickerJun', '@Resources.MonthPickerJul', '@Resources.MonthPickerAug', '@Resources.MonthPickerSep', '@Resources.MonthPickerOct', '@Resources.MonthPickerNov', '@Resources.MonthPickerDec']
+            });
+        });
+        //
+        $(document).on('change', 'input, select, textarea', function () {
+            //alert('form changed');
+        });
+        //
+        $(document).on('click', '#window-main', function () {
+            $("#RecordFiles").fileinput({
+                previewFileType: "image",
+                previewClass: "bg-warning",
+                //allowedFileExtension: ["jpg", "gif", "png"],
+                browseClass: "btn btn-success",
+                browseLabel: "Pick File",
+                browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i>",
+                removeClass: "btn btn-danger",
+                removeLabel: "Delete",
+                removeIcon: "<i class=\"glyphicon glyphicon-trash\"></i>",
+                uploadClass: "btn btn-info",
+                uploadLabel: "Upload",
+                uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i>",
+                uploadUrl: "/MedicalRecord/UploadMedicalRecord",
+                uploadAsync: false,
+                maxFielCount: 3,
+                uploadExtraData: function () {
+                    return {
+                        RecordID: $("#RecordID").val(),
+                        DateReceived: $("#DateReceived").val(),
+                        IssuingHospital: $("#IssuingHospital").val()
+                    }
+                }
+            });
+        });
+        //
+        function loadPage(page) {
+            showPageLoader();
+            var pageUrl
+            switch (page) {
+                case 'upload_record':
+                    pageUrl = '/MedicalRecord/ShowUploadMedicalRecord';
+                    break;
+                case 'ask_question':
+                    pageUrl = '/ServiceCenter/AskQuestion';
+                    break;
+                case 'print_case':
+                    pageUrl = '/ServiceCenter/PrintCase';
+                    break;
+                case 'read_articles':
+                    pageUrl = '/ServiceCenter/ReadArticles';
+                    break;
+                case 'live_chat':
+                    pageUrl = '/ServiceCenter/LiveChat';
+                    break;
+                case 'disease_history':
+                    pageUrl = '/MedicalHistory/GetDiseaseHistory';
+                    break;
+            }
+            $.ajax({
+                url: pageUrl,
+                type: 'GET',
+                success: function (data, textStatus, jqXHR) {
+                    hidePageLoader();
+                    $("#window-main").html(data);
+                    $("#window-main").trigger('click');
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    hidePageLoader();
+                    alert('errorThrown=' + errorThrown);
+                }
+            });
+        }
+        function showPageLoader() {
+            $('#page-loader').modal('show');
+        }
+
+        function hidePageLoader() {
+            $('#page-loader').modal('hide');
+        }
+    </script>
+}

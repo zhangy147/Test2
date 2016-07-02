@@ -1,0 +1,673 @@
+﻿@{
+    ViewBag.Title = "BuildPatientProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/jquery-ui.css")
+@Styles.Render("~/Content/request-step.css")
+@Styles.Render("~/Content/fileinput.min.css")
+
+<div class="row step">
+    <div id="div1" class="col-md-2 col-md-offset-1 activestep" onclick="javascript: clickStep(1);">
+        <i class="glyphicon glyphicon-plus"></i>
+        <p> @Resources.ProfileStep1</p>
+    </div>
+    <div id="div2" class="col-md-2" onclick="javascript: clickStep(2);">
+        <i class="glyphicon glyphicon-transfer"></i>
+        <p>@Resources.ProfileStep2</p>
+    </div>
+    <div id="div3" class="col-md-2" onclick="javascript: clickStep(3);">
+        <i class="glyphicon glyphicon-pencil"></i>
+        <p>@Resources.ProfileStep3</p>
+    </div>
+    <div id="div4" class="col-md-2" onclick="javascript: clickStep(4);">
+        <i class="glyphicon glyphicon-upload"></i>
+        <p>@Resources.ProfileStep4</p>
+    </div>
+    <div id="div5" class="col-md-2" onclick="javascript: clickStep(5);">
+        <i class="glyphicon glyphicon-usd"></i>
+        <p>@Resources.ProfileStep5</p>
+    </div>
+</div>
+<div class="row setup-content activeStepInfo" id="step-1">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 well" id="step-1-content">
+            @Html.Partial("_PatientProfilePanel")
+        </div>
+    </div>
+</div>
+<div class="row setup-content hiddenStepInfo" id="step-2">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 well" id="step-2-content">
+            @Html.Partial("_DiseaseStatePanel")
+        </div>
+    </div>
+</div>
+<div class="row setup-content hiddenStepInfo" id="step-3">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 well" id="step-3-content">
+            @Html.Partial("_MedicalHistoryPanel")
+        </div>
+    </div>
+</div>
+<div class="row setup-content hiddenStepInfo" id="step-4">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 well" id="step-4-content">
+            @Html.Partial("_MedicalRecordPanel")
+        </div>
+    </div>
+</div>
+<div class="row setup-content hiddenStepInfo" id="step-5">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 well" id="step-5-content">
+            @Html.Partial("_PaymentPanel")
+        </div>
+    </div>
+</div>
+<div style="clear:both"></div>
+<div class="row">
+    <button class="btn btn-warning col-md-1 col-md-offset-5 btn-prev" type="button" onclick="return clickPrev()">
+        <span class="glyphicon glyphicon-arrow-left"></span> @Resources.ProfilePreviousPage
+    </button>
+    <button class="btn btn-warning col-md-1 btn-next" type="button" onclick="return clickNext()">
+        <span class="glyphicon glyphicon-arrow-right"></span> @Resources.ProfileNextPage
+    </button>
+</div>
+<div style="clear:both"></div>
+
+@Html.Partial("_PageLoader")
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/Scripts/jquery.ui.monthpicker.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+    @Scripts.Render("~/Scripts/FileInput/canvas-to-blol.min.js")
+    @Scripts.Render("~/Scripts/FileInput/fileinput.min.js")
+    @Scripts.Render("~/Scripts/CustomPlugin/js.cookie.js")
+    <script language="javascript">
+        var STEPS = 6; //SERVE AS CONSTANT
+        var formChanged = false;
+        var profileCreated = false;
+        @if(ViewBag.ProfileCreated)
+        {
+            @:profileCreated = true;
+        }
+        var targetStepIndex = 0;
+        var targetTabIndex = 0;
+        var visited = [STEPS];
+        initializeVisitedPages(visited, STEPS);
+        visited[targetStepIndex][targetTabIndex] = 1;
+
+        $( document ).ready(function() {
+            $(".btn-prev").prop('disabled', true);
+            
+            var cache = {};
+
+            $("#disease-name").autocomplete({
+                minLength: 2,
+                source: function (request, response) {
+                    var term = request.term;
+                    if (term in cache) {
+                        response(cache[term]);
+                        return;
+                    }
+                    $.getJSON("/PatientProfile/GetDiseaseNameList", { term: $("#disease-name").val() }, function (data, status, xhr) {
+                        //alert(data);
+                        cache[term] = data;
+                        response(data);
+                    });
+                },
+                select: function (event, ui) {
+                    //works fine
+                    $("#DiseaseID").val(ui.item.id);
+                    $("#DiseaseID").change();
+                }
+            });
+
+            $(document).on('focus', 'input.monthpicker', function () {
+                $('input.monthpicker').monthpicker({
+                    monthNamesShort: ['@Resources.MonthPickerJan', '@Resources.MonthPickerFeb', '@Resources.MonthPickerMar', '@Resources.MonthPickerApr', '@Resources.MonthPickerMay', '@Resources.MonthPickerJun', '@Resources.MonthPickerJul', '@Resources.MonthPickerAug', '@Resources.MonthPickerSep', '@Resources.MonthPickerOct', '@Resources.MonthPickerNov', '@Resources.MonthPickerDec']
+                });
+            });
+
+            $(document).on('change', 'input, select, textarea', function () {
+                //alert('form changed');
+                formChanged = true;
+            });
+            //
+            $(document).on('keyup', 'input', function () {
+                var $errorDiv = $('span[data-valmsg-for="' + this.id + '"]');
+                if ($errorDiv.html() != "") {
+                    $errorDiv.html("");
+                }
+            });
+            //
+            //================================================================================================================
+            // #RecordFiles are in the following functions
+            //    (1) $(document).on('click', '#upload_record_tab', function () {})
+            //    (2) $(document).on('filebatchuploadsuccess', '#RecordFiles', function (event, data, previewId, index) {})
+            //    (3) function UploadFile()
+            //================================================================================================================
+            $(document).on('click', '#upload_record_tab', function () {
+                $("#RecordFiles").fileinput({
+                    previewFileType: "image",
+                    previewClass: "bg-warning",
+                    //allowedFileExtension: ["jpg", "gif", "png"],
+                    browseClass: "btn btn-success",
+                    browseLabel: "Pick File",
+                    browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i>",
+                    removeClass: "btn btn-danger",
+                    removeLabel: "Delete",
+                    removeIcon: "<i class=\"glyphicon glyphicon-trash\"></i>",
+                    uploadClass: "btn btn-info",
+                    uploadLabel: "Upload",
+                    uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i>",
+                    uploadUrl: "/MedicalRecord/UploadMedicalRecord",
+                    uploadAsync: false,
+                    maxFielCount: 3,
+                    uploadExtraData: function () {
+                        return {
+                            RecordID: $("#RecordID").val(),
+                            DateReceived: $("#DateReceived").val(),
+                            IssuingHospital: $("#IssuingHospital").val()
+                        }
+                    }
+                });
+            });
+            //
+            $(document).on('filebatchuploadsuccess', '#RecordFiles', function (event, data, previewId, index) {
+               // alert('load file successful');
+                $("#RecordFiles").closest('form').trigger('reset');
+                $("#RecordFiles").fileinput('reset');
+                //
+                if (formChanged = true) {
+                    formChanged = false;
+                }
+                var navigatingAction = getNavigatingAction();
+                alert('navigatingAction=' + navigatingAction);
+                if (navigatingAction.localeCompare("Next") == 0) {
+                    clickNext();
+                } else if (navigatingAction.localeCompare("Prev") == 0) {
+                    clickPrev();
+                } else if (navigatingAction.localeCompare("Step") == 0) {
+                    clickStep(targetStepIndex + 1);
+                }
+            });
+            //
+            hidePageLoader();
+        })(jQuery);
+        //
+        function initializeVisitedPages(arrVisited, intSteps) {
+            for (var i = 0; i < intSteps; i++) {
+                arrVisited[i] = [intSteps - 1];
+                for (var j = 0; j < (intSteps - 1) ; j++) {
+                    arrVisited[i][j] = 0;
+                }
+            }
+        }
+        //==========================================================================
+        //(1) navigation will be controlled by two type of buttons: Step buttons
+        //    and Next/Previous buttons
+        //(2) Step button allowa user to move by step with the first
+        //    tab of the step as the active tab; Next and Previous allow user
+        //    to move by tab
+        //(3) when crossing step by any button, reset active step and active tab,
+        //    more specifically, reset active step only when Step and Next button
+        //    is clicked. The active tab will be defaulted to first tab. While
+        //    Previous button is clicked, reset both active step and tab. The
+        //    active tab will be set to the last tab of previous step.
+        //(4) When any navigation button is clicked, the following items will be
+        //    determined: [1] current active step [2] current active tab [3] target
+        //    step [4} traget tab [5} is target tab visited [6} is form changed.
+        //    If target tab has not been visited or current form is changed, submit
+        //    the form. If submission succeeds, navigate to the target step/tab.
+        //    If sumission fails, stag in the same tab. If form is not changed and
+        //    target tab has been visited, navigate to the target step/tab only.
+        //(5) When submission succeeds, reset the state of following flags:
+        //    [1] formChanged [2}tabVisited [3] profileCreated [4]buttonClicked
+        //(6) Separe the click event from show event. Obtain status from the fommer
+        //    routine, change display properties from the latter routine
+        //
+        //=========================================================================
+
+
+        function hideInactiveStepInfos() {
+            var $setup_Contents = $(".row.setup-content");
+            $setup_Contents.each(function () {
+                if ($(this).hasClass("activeStepInfo")) {
+                    $(this).removeClass("activeStepInfo");
+                    $(this).addClass("hiddenStepInfo");
+                }
+            });
+        }
+
+        function showActiveStepInfo(stepIndex) {
+            var id = "#step-" + (stepIndex + 1);
+            $(id).addClass("activeStepInfo");
+        }
+
+
+        function clickStep(step) {
+            //alert('clickStep => profileCreated=' + profileCreated);
+            if (profileCreated) {
+                targetStepIndex = step - 1;
+                targetTabIndex = 0;
+                var targetTabVisited = visited[targetStepIndex][targetTabIndex]
+                if (targetTabVisited == 0 && formChanged == false) {
+                    loadPage(step, targetStepIndex, targetTabIndex);
+                } else if (formChanged) {
+                    submitForm(targetStepIndex, targetTabIndex);
+                } else {
+                    showStep(targetStepIndex);
+                    showTab(targetStepIndex, targetTabIndex);
+                }
+            } else {
+                alert('@Resources.AlertCreateProfileFirst');
+            }
+        }
+        //
+
+        function showStep(stepIndex) {
+            //alert('showStep() is called');
+            var steps = getSteps();
+            if (profileCreated) {
+                $(steps).each(function () {
+                    if ($(this).hasClass("activestep")) {
+                        $(this).removeClass("activestep");
+                    }
+                });
+                getStep(stepIndex).addClass("activestep");
+                hideInactiveStepInfos();
+                showActiveStepInfo(stepIndex);
+            } else {
+                alert('@Resources.AlertCreateProfileFirst');
+            }
+        }
+        //
+        function OnAjaxFailure(xhr, status, error) {
+            hidePageLoader();
+            //alert('The web site is experiencing a problem, please try again or later');
+            alert('@Resources.AlertSystemIssue');
+        }
+        function OnAjaxSuccess(data) {
+            hidePageLoader();
+            //alert("OnAjaxSuccess data=" + data);
+            var activeStepIndex = getActiveStepIndex();
+            var activeForm = getActiveForm(activeStepIndex);
+            var returnFormAction = $(data).closest('form').attr('action');
+            //alert("returnFormAction=" + returnFormAction);
+            //
+            if (returnFormAction == activeForm.attr('action')) {
+                //server-side validation failed
+                activeForm.parent().html(data);
+                return;
+            } else {
+                //alert('targetStepIndex=' + targetStepIndex + "  targetTabIndex=" + targetTabIndex);
+                var targetTabId = getTabId(targetStepIndex, targetTabIndex);
+                if (returnFormAction == "#select") {
+                    updateSelect(data);
+                } else if (returnFormAction == "##") {
+                    var returnMessage = $(data).closest('form').find('message').html();
+                    alert(returnMessage);
+                    return;
+                } else if (returnFormAction.indexOf("SaveDiseaseInformation") > 0) {
+
+                } else {
+                    $(targetTabId).html(data);
+                }
+                var currentStepIndex = getActiveStepIndex();
+                var currentTabIndex = getActiveTabIndex(currentStepIndex);
+                //alert('currentStepIndex=' + currentStepIndex);
+                //alert('currentTabIndex=' + currentTabIndex);
+                //alert('targetStepIndex=' + targetStepIndex);
+                //alert('targetTabIndex=' + targetTabIndex);
+
+                if (currentStepIndex == 0) {
+                    profileCreated = true;
+                }
+                if (currentStepIndex == targetStepIndex) {
+                    showTab(targetStepIndex, targetTabIndex);
+                } else {
+                    showStep(targetStepIndex);
+                    showTab(targetStepIndex, targetTabIndex);
+                }
+
+                if (formChanged = true) {
+                    formChanged = false;
+                }
+                visited[targetStepIndex][targetTabIndex] = 1;
+            }
+        }
+        //
+        function clickPrev() {
+            var currentStepIndex = getActiveStepIndex();
+            var currentTabIndex = getActiveTabIndex(currentStepIndex);
+            //alert("currentStepIndex=" + currentStepIndex + " currentTabIndex=" + currentTabIndex);
+            //
+            targetTabIndex = getActiveTab(currentStepIndex).prev('li').index();
+            if (targetTabIndex == -1) {
+                if (currentStepIndex > 0) {
+                    //cross step into previous one
+                    targetStepIndex = currentStepIndex - 1;
+                    targetTabIndex = getTabs(targetStepIndex).length - 1;
+                } else {
+                    //nowhere
+                    targetStepIndex = currentStepIndex;
+                    targetTabIndex = currentTabIndex;
+                }
+            } else {
+                targetStepIndex = currentStepIndex;
+            }
+            //alert("targetStepIndex=" + targetStepIndex + " targetTabIndex=" + targetTabIndex);
+            var nextTabVisited = visited[targetStepIndex][targetTabIndex];
+            //alert("nextTabVisited=" + nextTabVisited);
+            if (formChanged) {
+                submitForm(targetStepIndex, targetTabIndex);
+            } else if (nextTabVisited == 0) {
+                loadPage(currentStepIndex, targetStepIndex, targetTabIndex);
+            } else if (targetStepIndex != currentStepIndex) {
+                showStep(targetStepIndex);
+                showTab(targetStepIndex, targetTabIndex);
+            } else {
+                showTab(targetStepIndex, targetTabIndex);
+            }
+        }
+
+        function clickNext() {
+            var currentStepIndex = getActiveStepIndex();
+            var currentTabIndex = getActiveTabIndex(currentStepIndex);
+            //
+           //alert("Next is clicked");
+            //
+            targetTabIndex = getActiveTab(currentStepIndex).next('li').index();
+            if (targetTabIndex == -1) {
+                targetStepIndex = getActiveStep().next('div').index();
+                if (targetStepIndex > -1) {
+                    //cross step
+                    targetTabIndex = 0;
+                } else {
+                    //nowhere
+                    //targetTabIndex = currentTabIndex;
+                    //targetStepIndex = currentStepIndex;
+                    //
+                    //beyond the last tab and last step into personal account home screen
+                    targetTabIndex = 0;
+                    targetStepIndex = currentStepIndex + 1;
+                }
+            } else {
+                targetStepIndex = currentStepIndex
+            }
+            var nextTabVisited = visited[targetStepIndex][targetTabIndex];
+            if (formChanged) {
+                submitForm(targetStepIndex, targetTabIndex);
+            } else if (nextTabVisited == 0) {
+                loadPage(currentStepIndex, targetStepIndex, targetTabIndex);
+            } else if (targetTabIndex == 0) {
+                showStep(targetStepIndex);
+                showTab(targetStepIndex, targetTabIndex);
+            } else {
+                showTab(targetStepIndex, targetTabIndex);
+            }
+        }
+
+        function showTab(targetStepIndex, targetTabIndex) {
+            //alert('showTab');
+            var currentStepIndex = getActiveStepIndex();
+            var $currentTab = getActiveTab(currentStepIndex);
+            var $targetTab = getTab(targetStepIndex, targetTabIndex);
+            //
+            $targetTab.removeClass("disabled");
+            $targetTab.find('a[data-toggle]').each(function () {
+                $(this).attr("data-toggle", "tab");
+            });
+            $targetTab.find('a[data-toggle="tab"]').tab('show');
+            $currentTab.find('a[data-toggle="tab"]').each(function () {
+                $(this).attr("data-toggle", "").parent('li').addClass("disabled");;
+            })
+            //
+            setPageNavigationAvailability(targetStepIndex, targetTabIndex);
+        }
+
+        function submitForm(targetStep, targetTab) {
+            var currentStepIndex = getActiveStepIndex();
+            var activeForm = getActiveForm(currentStepIndex);
+            //alert("IN SUBMITFORM, currentStepIndex" + currentStepIndex + " activeForm=" + activeForm);
+            //alert("IN SUBMITFORM, targetStep" + targetStep + " targetTab=" + targetTab);
+
+            validateDynamicForm(activeForm);
+            if (activeForm.valid()) {
+                //
+                //alert("submitForm()=" + activeForm.attr('action'));
+                //
+                if (isUploadForm(activeForm)) {
+                    //alert('isUploadForm is true');
+                    uploadFile();
+                } else {
+                    buildHiddenInputs(activeForm, targetStep, targetTab);
+                    //alert("buildHiddenInputs");
+                    activeForm.submit();
+                }
+                showPageLoader();
+            }
+        }
+
+        function loadPage(currStepIndex, targetStepIndex, targetTabIndex) {
+            showPageLoader();
+            var targetTabId = getTabId(targetStepIndex, targetTabIndex);
+            $.ajax({
+                url: '/PatientProfile/GetPage',
+                type: 'get',
+                data: { 'TargetStep': targetStepIndex, 'TargetTab': targetTabIndex },
+                success: function (data, textStatus, jqXHR) {
+                    //alert(data);
+                    hidePageLoader();
+                    //
+                    $(targetTabId).html(data);
+                    //
+                    $('#upload_record_tab').trigger('click');
+                    //
+                    if (targetStepIndex != currStepIndex) {
+                        showStep(targetStepIndex);
+                        showTab(targetStepIndex, targetTabIndex);
+                    } else {
+                        showTab(targetStepIndex, targetTabIndex);
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    hidePageLoader();
+                    alert('errorThrown=' + errorThrown);
+                }
+            });
+        }
+
+        function showPageLoader() {
+            $('#page-loader').modal('show');
+        }
+
+        function hidePageLoader() {
+            $('#page-loader').modal('hide');
+        }
+        function buildHiddenInputs(activeForm, targetStep, targetTab) {
+            var nextPage = targetStep + "-" + targetTab;
+            activeForm.append("<input type='hidden' name='nextPage' value='" + nextPage + "'>");
+        }
+
+        function validateDynamicForm(currForm) {
+            currForm.removeData("validator");
+            currForm.removeData("unobtrusiveValidation");
+            $.validator.unobtrusive.parse(currForm);
+            currForm.validate();
+            //******************************************************************************
+            //The above line is important and added for client side validation to trigger,
+            //without this it didn't fire client side errors.
+            //******************************************************************************
+        }
+        function updateSelect(data) {
+            var updateTarget = $(data).closest('form').find('input[name="target"]').val();
+            //alert('updateTarget=' + updateTarget);
+            var updateContent = $(data).closest('form').find('select').html();
+            //alert('updateContent=' + updateContent);
+            $("#" + updateTarget).html(updateContent);
+        }
+        function getTabs(stepIndex) {
+            //ok
+            return "#step-" + (stepIndex + 1) + "-content ul:first li";
+        }
+        function getTab(stepIndex, tabIndex) {
+            //ok
+            var tabs = getTabs(stepIndex);
+            return $(tabs).eq(tabIndex);
+        }
+        function getTabId(stepIndex, tabIndex) {
+            return getTab(stepIndex, tabIndex).find('a').attr('href');
+        }
+        function getActiveTab(stepIndex) {
+            var tabs = getTabs(stepIndex);
+            return $(tabs).filter('.active');
+        }
+        function getActiveTabIndex(stepIndex) {
+            return getActiveTab(stepIndex).index();
+        }
+        function getActiveTabId(stepIndex) {
+            //ok
+            return getActiveTab(stepIndex).find('a').attr('href');
+        }
+        function getActiveForm(stepIndex) {
+            //ok
+            var activeTabId = getActiveTabId(stepIndex);
+            return $(activeTabId + " form");
+        }
+        function getSteps() {
+            //ok
+            return ".row.step div";
+        }
+        function getStep(stepIndex) {
+            var steps = getSteps();
+            return $(steps).eq(stepIndex);
+        }
+        function getActiveStep() {
+            //ok
+            var steps = getSteps();
+            return $(steps).filter(".activestep");
+        }
+        function getActiveStepIndex() {
+            //ok
+            return getActiveStep().index();
+        }
+        function isLastStep(stepIndex) {
+            var steps = getSteps();
+            if ($(steps).length == (stepIndex + 1)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function isLastTab(stepIndex, tabIndex) {
+            var tabs = getTabs(stepIndex);
+            if ($(tabs).length == (tabIndex + 1)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function isFirstStep(stepIndex) {
+            if (stepIndex == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function isFirstTab(tabIndex) {
+            if (tabIndex == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function setPageNavigationAvailability(stepIndex, tabIndex) {
+            //alert(isPrevButtonDisabled());
+
+            if (isPrevButtonDisabled()) {
+                enablePrevButton();
+            }
+            //if (isNextButtonDisabled()) {
+            //    enableNextButton();
+            //}
+            //if (isLastStep(stepIndex)) {
+            //    //disable last step
+            //    //disableLastStep();
+            //}
+            //if (isLastStep(stepIndex) && isLastTab(stepIndex, tabIndex)) {
+            //    disableNextButton();
+            //}
+            //if (isFirstStep(stepIndex)) {
+            //disable last step
+            //disableFirstStep();
+            //}
+            if (isFirstStep(stepIndex) && isFirstTab(tabIndex)) {
+                disablePrevButton();
+            }
+        }
+        function disableNextButton() {
+            $(".btn-next").prop('disabled', true);
+        }
+        function disablePrevButton() {
+            $(".btn-prev").prop('disabled', true);
+        }
+        function enableNextButton() {
+            $(".btn-next").prop('disabled', false);
+        }
+        function enablePrevButton() {
+            $(".btn-prev").prop('disabled', false);
+            //alert('called enabled');
+        }
+        function isPrevButtonDisabled() {
+            if ($(".btn-prev").attr('disabled') == 'disabled') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function isNextButtonDisabled() {
+            if ($(".btn-next").attr('disabled') == 'disabled') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        //new
+        function getNavigatingAction() {
+            var action = "";
+            var currentStepIndex = getActiveStepIndex();
+            var currentTabIndex = getActiveTabIndex(currentStepIndex);
+ 
+            if (targetStepIndex == currentStepIndex && targetTabIndex == (currentTabIndex + 1)) {
+                action = "Next";
+            } else if (targetStepIndex == (currentStepIndex + 1) && targetTabIndex == 0) {
+                action = "Next";
+            } else if (targetStepIndex == currentStepIndex && targetTabIndex == (currentTabIndex - 1)) {
+                action = "Prev";
+            } else if (targetStepIndex == (currentStepIndex - 1) && currentTabIndex == 0) {
+                action = "Prev";
+            } else if (targetStepIndex != currentStepIndex) {
+                action = "Step";
+            }
+            return action;
+        }
+        function isUploadForm(frm) {
+            //alert('IsUploadForm is called');
+            var action = $(frm).attr('action');
+            //alert(action);
+            if (action.indexOf('UploadMedicalRecord') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function uploadFile() {
+            $('#RecordFiles').fileinput('upload');
+            return false;
+        }
+    </script>
+}

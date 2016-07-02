@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "MoreTreatmentReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>@Resources.BestTreatmentReport</h4>
+    </div>
+    <div class="panel-body">
+        <p>@Resources.WhatIsBestTreatment</p>
+    </div>
+</div>
+<!--tabs-->
+<div class="panel">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active"><a href="#profile" data-toggle="tab"><i class="glyphicon glyphicon-asterisk"></i> Overview</a></li>
+        <li><a href="#messages" data-toggle="tab"><i class="glyphicon glyphicon-comment"></i> Sample</a></li>
+        <li><a href="#settings" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i> Procedures</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active well" id="profile">
+            Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+            <p>Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis dolor, in sagittis nisi.</p>
+        </div>
+        <div class="tab-pane well" id="messages">
+            Message ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+            <p>Quisque mauris augu.</p>
+        </div>
+        <div class="tab-pane well" id="settings">
+            Lorem settings dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+            <p>Quisque mauris augue, molestie.</p>
+        </div>
+    </div>
+    @Html.ActionLink(Resources.Enter, "BuildPatientProfile", "ServiceManager", routeValues: null, htmlAttributes: new { @class = "btn btn-default", @id = "enter_service" })
+</div>
+<!--/tabs-->
+
+@Html.Partial("_PageLoader")
+
+@section scripts {
+   @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        $(document).ready(function () {
+
+            //$("#service").click(function (e) {
+            //    var href = $(this).attr("href");
+            //    $(this).attr("href", href + "?serviceId=1")
+            //});
+
+            $("#enter_service").click(function (e) {
+                $('#page-loader').modal('show');
+            });
+
+        });
+    </script>
+}
+

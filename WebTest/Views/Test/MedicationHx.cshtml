@@ -1,0 +1,90 @@
+﻿@model WebTest.ViewModels.PatientMedicationAndAllergyHistoryViewData
+@using WebTest.HtmlHelpers
+@{
+    ViewBag.Title = "MedicationHx";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "system_review_tab";
+    //options.InsertionMode = InsertionMode.Replace;
+}
+
+@using (Ajax.BeginForm("SaveMedicationAndAllergyHistory", "Test", options))
+{   
+    @Html.EditorFor(s => s)
+    <h4>Medication History</h4>
+    <br />
+    <div id="medications">
+        @Html.EditorForMany(s => s.medicationHistories)
+    </div>
+    <h4>Allergy History</h4>
+    <br />
+    <div id="allergy">
+        @Html.EditorForMany(s => s.allergyHistories)
+    </div>
+    <input type="button" name="button" id="submit-hx" value="submit">
+}
+@section scripts {
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryui")
+    <script>
+
+        $(function () {
+            //$(".add-medication").click(function (e) {
+            //    alert("added");
+            //    //alert($(this).parent().parent().attr("id"));
+            //    AddMedicationHistory();
+            //});
+            $(document).on('click', '.add-medication', function () {
+                alert('form changed');
+                AddMedicationHistory();
+            });
+            //$(".delete-medication").click(function (e) {
+            //    $(this).parent().parent().parent().remove();
+            //});
+            $(document).on('click', '.delete-medication', function () {
+                $(this).parent().parent().parent().remove();
+            });
+            //
+            $(document).on('click', '#submit-hx', function (e) {
+                
+                alert('clciked');
+                var frm = $(this).closest("form");
+                alert(frm.attr('action'));
+                submitForm(frm);
+            });
+        })(jQuery);
+        //
+        function submitForm(formToSubmit) {
+            
+            formToSubmit.submit();
+            alert('for is submitted');
+        }
+        function AddMedicationHistory() {
+            $.ajax({
+                url: '/Test/AddMedicationHistory',
+                type: 'get',
+                success: function (data, textStatus, jqXHR) {
+                    //alert('get partial');
+                    $("#medications").append(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert('errorThrown=' + errorThrown);
+                }
+            });
+        }
+        function OnAjaxFailure() {
+            alert('OnAjaxFailure');
+        }
+        function OnAjaxSuccess() {
+            alert('OnAjaxSuccess');
+        }
+    </script>
+}

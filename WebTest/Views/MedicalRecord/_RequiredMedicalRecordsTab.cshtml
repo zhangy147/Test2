@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebTest.ViewModels.RequiredMedicalRecordViewData>
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "GET";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+}
+@using (Ajax.BeginForm("GetUnuploadedMedicalRecords", "MedicalRecord", options))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-12">If you have fewer medical records and they are at hand now, you can upload all of them together on the next step. Otherwise you may skip this step and upload the records later when they are available.</div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <button type="button" id="skip-upload-file" class="btn btn-info">Skip</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">We need the following medical records to complete your case review:</div>
+        </div>
+        <div class="form-group">
+            @{
+    int cnt = 0;
+    foreach (var record in Model)
+    {
+        if (cnt++ % 4 == 0)
+        {
+            @: </div><div class="form-group">
+            }
+            <div class="col-md-3">
+                @Html.DisplayFor(s => record.RecordName)
+                @if (record.IsMandatory)
+                {
+                    @Html.Raw("(mandatory)")
+                }
+            </div>
+    } @*foreach loop*@
+            }@*code block*@
+        </div>@*form-group*@
+    </div>
+}@*(using clause)*@
+<script language="javascript">
+    $(document).ready(function () {
+        $(document).on('click', '#skip-upload-file', function () {
+            clickStep(5);
+        });
+    });
+</script>

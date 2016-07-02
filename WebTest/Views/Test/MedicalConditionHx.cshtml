@@ -1,0 +1,127 @@
+﻿@model List<WebTest.ViewModels.PatientMedicalConditionHistoryViewData>
+@{
+    ViewBag.Title = "MedicalConditionHx";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "system_review_tab";
+    //options.InsertionMode = InsertionMode.Replace;
+}
+<h2>Past Medical History</h2>
+@{
+    int systemTotal = Model.Count();
+    decimal blok = Math.Round((decimal)(Model.Count() / 4), 2);
+    int sectionCount = (int)Math.Ceiling(blok);
+    int systemCount = 0;
+    using (Ajax.BeginForm("SaveMedicalConditionHistory", "Test", options))
+    {
+        for (int i = 0; i < sectionCount; i++)
+        {
+            systemCount = (i + 1) * 4;
+            if (systemCount > systemTotal)
+            {
+                systemCount = systemTotal;
+            }
+            @:<div class="container">
+            for (int j = i * 4; j < systemCount; j++)
+            {
+                if (j % 4 == 0)
+                {
+                    @:<div class="row">
+                }
+                if (j == 0)
+                {
+                    <div class="col-md-3">
+                        <label title="Diseases such as Bell's palsy, Parkinson's syndrome, Allzermer's etc." data-toggle="tooltip">@Model[j].BodySystemName</label>
+                        <button type="button" id="System_@j" class="btn btn-default" data-toggle="collapse" data-target="#collapse_@j"><span class="glyphicon glyphicon-folder-open"> Close</span></button>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-3">
+                        <label title="Diseases such as Bell's palsy, Parkinson's syndrome, Allzermer's etc." data-toggle="tooltip">@Model[j].BodySystemName</label>
+                        <button type="button" id="System_@j" class="btn btn-default" data-toggle="collapse" data-target="#collapse_@j"><span class="glyphicon glyphicon-folder-close"> Open</span></button>
+                    </div>
+                }
+                if ((j + 1) % 4 == 0 || (j + 1) > systemTotal)
+                {
+                    @:</div>
+                }
+            }
+            for (int j = i * 4; j < systemCount; j++)
+            {
+                if (j == 0)
+                {
+                    @:<div id="collapse_@j" class="collapse in">
+                }
+                else
+                {
+                    @:<div id="collapse_@j" class="collapse">
+                }
+                for (int k = 0; k < Model[j].MedicalConditionHistories.Count(); k++)
+                {
+                    if (k % 4 == 0)
+                    {
+                        @:<div class="row">
+                    }
+                    @Html.EditorFor(s => Model[j].MedicalConditionHistories[k], "MedicalConditionViewData")
+              
+                    if ((k + 1) % 4 == 0 || (k + 1) >= Model[j].MedicalConditionHistories.Count())
+                    {
+                        @:</div>
+                    }
+                }
+                @:</div>
+            }
+            @:</div>
+        }
+        <button type="submit" class="btn btn-success">Save</button>
+    }
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        $(function () {
+            @for (int i = 0; i < systemTotal; i++)
+            {
+                @:$("#collapse_@i").on("hide.bs.collapse", function () {
+                                      @:$("#System_@i").html('<span class="glyphicon glyphicon-folder-close"> Open</span>');
+                                @:});
+                            @:$("#collapse_@i").on("show.bs.collapse", function () {
+                                     @:$("#System_@i").html('<span class="glyphicon glyphicon-folder-open"> Close</span>');
+                                @:});
+                       }
+            //disableToggle();
+        });
+        function disableToggle() {
+            $(".collapse").each(function () {
+                $(this).collapse({ toggle: false });
+            });
+        }
+        function getVisibles() {
+            var visibles = ""
+            //$("document").find(".collapse").filter(":visible").each(function () {
+            //    visibles = visibles + "==" + $(this).attr("id");
+            //});
+            $(".collapse").each(function () {
+                $(this).collapse({ toggle: false }).collapse();
+            });
+            return ct;
+        }
+        //$("document").on("show.bs.collapse", ".collapse", function () {
+        //});
+        //$("#System_2").on("click", function () {
+        //    alert("System_2 is clicked");
+        //    $(".collapse").each(function () {
+        //        $(this).collapse('hide');
+        //     });
+        //});
+    </script>
+}

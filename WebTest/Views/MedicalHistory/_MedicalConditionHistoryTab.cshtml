@@ -1,0 +1,97 @@
+﻿@model List<WebTest.ViewModels.PatientMedicalConditionHistoryViewData>
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "system_review_tab";
+    //options.InsertionMode = InsertionMode.Replace;
+}
+@{
+    int systemTotal = Model.Count();
+    int columns = 3;
+    double blok = (double)systemTotal / (double)columns;
+    int sectionCount = (int)Math.Ceiling(blok);
+    int systemCount = 0;
+    using (Ajax.BeginForm("SaveMedicalConditionHistory", "MedicalHistory", options))
+    {
+        for (int i = 0; i < sectionCount; i++)
+        {
+            systemCount = (i + 1) * columns;
+            if (systemCount > systemTotal)
+            {
+                systemCount = systemTotal;
+            }
+            @:<div class="container">
+            for (int j = i * columns; j < systemCount; j++)
+            {
+                if (j % columns == 0)
+                {
+                    @:<div class="row">
+                }
+                if (j == 0)
+                {
+                    <div class="col-md-4">
+                        <label title="Diseases such as Bell's palsy, Parkinson's syndrome, Allzermer's etc." data-toggle="tooltip">@Model[j].BodySystemName</label>
+                        <button type="button" id="System_@j" class="btn btn-default" data-toggle="collapse" data-target="#collapse_@j"><span class="glyphicon glyphicon-folder-open"> Close</span></button>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-4">
+                        <label title="Diseases such as Bell's palsy, Parkinson's syndrome, Allzermer's etc." data-toggle="tooltip">@Model[j].BodySystemName</label>
+                        <button type="button" id="System_@j" class="btn btn-default" data-toggle="collapse" data-target="#collapse_@j"><span class="glyphicon glyphicon-folder-close"> Open</span></button>
+                    </div>
+                }
+                if ((j + 1) % columns == 0 || (j + 1) >= systemTotal)
+                {
+                    @:</div>
+                }
+            }
+            for (int j = i * columns; j < systemCount; j++)
+            {
+                if (j == 0)
+                {
+                    @:<div id="collapse_@j" class="collapse in">
+                }
+                else
+                {
+                    @:<div id="collapse_@j" class="collapse">
+                }
+                for (int k = 0; k < Model[j].MedicalConditionHistories.Count(); k++)
+                {
+                    if (k % 4 == 0)
+                    {
+                        @:<div class="row">
+                    }
+                    @Html.EditorFor(s => Model[j].MedicalConditionHistories[k], "MedicalConditionViewData")
+
+                    if ((k + 1) % 4 == 0 || (k + 1) >= Model[j].MedicalConditionHistories.Count())
+                    {
+                        @:</div>
+                    }
+                }
+                @:</div>
+            }
+            @:</div>
+        }
+    }
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        @for (int i = 0; i < systemTotal; i++)
+        {
+                @:$("#collapse_@i").on("hide.bs.collapse", function () {
+                                                           @:$("#System_@i").html('<span class="glyphicon glyphicon-folder-close"> Open</span>');
+                                                    @:});
+                                        @:$("#collapse_@i").on("show.bs.collapse", function () {
+                                                           @:$("#System_@i").html('<span class="glyphicon glyphicon-folder-open"> Close</span>');
+                                                    @:});
+                        }
+    });
+</script>
+

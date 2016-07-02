@@ -1,0 +1,239 @@
+﻿body {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.center {
+   margin: auto;
+   width: 100%; 
+}
+.col-center {
+    float:none;
+    margin: 0 auto;
+    border:3px solid blue;
+}
+.container {
+    margin: auto;
+    width: 100%;
+    margin-bottom: 10px; 
+    /*border:3px solid #73AD21;*/
+    /*padding: 10px;*/
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*Navigation - added after default css */
+.header ul {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+    .header ul li {
+        padding: 0px 5px 0px 5px;
+    }
+
+/*.navbar-static-top{
+    min-height: 80px;
+}*/
+
+.navbar {
+    margin-bottom: 0px;
+    /*font-family: Garamond;*/
+}
+
+@media only screen and (min-width : 768px) {
+    /* Make Navigation Toggle on Desktop Hover */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-nav > li > a {
+        line-height: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+#top .navbar {
+    font-size: 1.2em;
+}
+/*following two snippets move the navigation text into screen center*/
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    *display: inline; /* ie7 fix */
+    *zoom: 1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-blue {
+    /*background-color: #066f38;*/
+    background-color: #4DA7A7;
+    /*color: #e25d29;*/
+    /*border-color: #000066;*/
+}
+
+    .navbar-blue > .container {
+        position: relative;
+    }
+
+.navbar-toggle {
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar-blue .navbar-toggle {
+    border-color: transparent;
+    color: #fff;
+}
+
+.navbar-blue .navbar-nav > li > a {
+    color: #fff;
+    /*new*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 82px;
+}
+
+.navbar-blue .nav > li > a:hover /*, .nav>li>a:focus*/ {
+    /*background-color: #000066;*/
+    background-color: #0d5c62;
+}
+
+.navbar-blue .icon-bar {
+    background-color: #fff;
+    height: 4px;
+}
+
+/*service container for Home/Index*/
+.service_container {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    /*background-color: #A0AdA0;*/
+    /*border: 1px solid red;*/
+}
+
+    .service_container img {
+        margin: 0px 10px;
+        float: left;
+        height: auto;
+        width: 115px;
+    }
+
+    .service_container h5, .service_container p {
+        margin: 0px;
+        padding: 5px 5px 5px 20px;
+    }
+
+/* AUTO COMPLETE */
+.ui-autocomplete span.hl_results {
+    /*background-color: #ffff66;*/
+    background-color: #00ff90;
+}
+
+/* loading - the AJAX indicator */
+.ui-autocomplete-loading {
+    background: white url('../Images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+
+scroll results .ui-autocomplete {
+    max-height: 250px;
+    overflow-y: auto;
+    prevent horizontal scrollbar overflow-x: hidden;
+    add padding for vertical scrollbar padding-right: 5px;
+}
+
+.ui-autocomplete li {
+    font-size: 16px;
+}
+
+/* IE 6 doesn't support max-height
+        * we use height instead, but this forces the menu to always be this tall
+        */
+* html .ui-autocomplete {
+    height: 250px;
+}
+/*
+    */
+#loader {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  background: url("../Images/ajax-loader.gif") no-repeat;
+}
+
+/*begin of file upload*/
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+/*end of file upload*/
+.container-fluid {
+    /*background: #F0F8FF;*/
+}
+.row.no-pad {
+  margin-right:0;
+  margin-left:0;
+}
+.row.no-pad > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}

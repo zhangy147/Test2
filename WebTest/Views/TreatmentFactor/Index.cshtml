@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebTest.Models.TreatmentFactor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FactorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FactorType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientPrompt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FactorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FactorType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientPrompt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TreatmentFactorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TreatmentFactorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TreatmentFactorID })
+        </td>
+    </tr>
+}
+
+</table>

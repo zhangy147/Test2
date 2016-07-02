@@ -1,0 +1,179 @@
+﻿@model WebTest.ViewModels.PatientMedicationAndAllergyHistoryViewData
+@using WebTest.HtmlHelpers
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "system_review_tab";
+    //options.InsertionMode = InsertionMode.Replace;
+}
+@using (Ajax.BeginForm("SaveMedicationAndAllergyHistory", "MedicalHistory", options))
+{
+    <h3>Medications & Supplements</h3>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(d => d.HasMedicationHistory)
+        </div>
+        <div class="col-xs-12">
+            <label class="radio-inline">
+                @Html.RadioButtonFor(x => x.HasMedicationHistory, true)Yes
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButtonFor(x => x.HasMedicationHistory, false)No
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <br />
+        </div>
+    </div>
+    <div id="medications">
+        @Html.LabelFor(x => x.medicationHistories)
+        @Html.EditorForMany(s => s.medicationHistories)
+    </div>
+    <h3>Allergies to Medication</h3>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(d => d.HasAllergyHistory)
+        </div>
+        <div class="col-xs-12">
+            <label class="radio-inline">
+                @Html.RadioButtonFor(x => x.HasAllergyHistory, true)Yes
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButtonFor(x => x.HasAllergyHistory, false)No
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <br />
+        </div>
+    </div>
+    <div id="allergies">
+        @Html.LabelFor(x => x.allergyHistories)
+        @Html.EditorForMany(s => s.allergyHistories)
+    </div>
+}
+<script>
+    $( document ).ready(function() {
+        if(@Model.medicationHistories.Count == 0){
+            HideMedicationHistoryLabel();
+        }
+        if(@Model.allergyHistories.Count == 0){
+            HideAllergyHistoryLabel();
+        }
+    //});
+    $(document).on('click', '#HasMedicationHistory', function () {
+        var radioValue = $("input[name=HasMedicationHistory]:checked").val();
+        if (radioValue == "False") {
+            $("#medications .row").each(function () {
+                $(this).remove();
+            });
+            HideMedicationHistoryLabel();
+        } else if (NoMedicationHistoryAdded()) {
+            AddMedicationHistory();
+            ShowMedicationHistoryLabel();
+        }
+    });
+    $(document).on('click', '#HasAllergyHistory', function () {
+        var radioValue = $("input[name=HasAllergyHistory]:checked").val();
+        if (radioValue == "False") {
+            $("#allergies .row").each(function () {
+                $(this).remove();
+            });
+            HideAllergyHistoryLabel();
+        } else if (NoAllergyHistoryAdded()) {
+            AddAllergyHistory();
+            ShowAllergyHistoryLabel();
+        }
+    });
+    $(document).on('click', '.add-medication', function () {
+        AddMedicationHistory();
+    });
+    $(document).on('click', '.delete-medication', function () {
+        $(this).parent().parent().parent().remove();
+        if (NoMedicationHistoryAdded()) {
+            SetHasMedicationHistoryRadioGroup("False");
+            HideMedicationHistoryLabel();
+        }
+    });
+    $(document).on('click', '.add-allergy', function () {
+        AddAllergyHistory();
+    });
+    $(document).on('click', '.delete-allergy', function () {
+        $(this).parent().parent().remove();
+        if (NoAllergyHistoryAdded()) {
+            SetHasAllergyHistoryRadioGroup('False');
+            HideAllergyHistoryLabel();
+        }
+    });
+    //
+    $(document).on('click', '#submit-hx', function (e) {
+        var frm = $(this).closest("form");
+        alert(frm.attr('action'));
+        submitForm(frm);
+    });
+    });
+    function NoMedicationHistoryAdded() {
+        if ($("#medications .row").length == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function SetHasMedicationHistoryRadioGroup(radioValue) {
+        $("input[name=HasMedicationHistory][value='" + radioValue + "']").prop('checked', true);
+    }
+    function HideMedicationHistoryLabel() {
+        $("#medications label:first").hide();
+    }
+    function ShowMedicationHistoryLabel() {
+        $("#medications label:first").show();
+    }
+    function NoAllergyHistoryAdded() {
+        if ($("#allergies .row").length == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function SetHasAllergyHistoryRadioGroup(radioValue) {
+        $("input[name=HasAllergyHistory][value='" + radioValue + "']").prop('checked', true);
+    }
+    function HideAllergyHistoryLabel() {
+        $("#allergies label:first").hide();
+    }
+    function ShowAllergyHistoryLabel() {
+        $("#allergies label:first").show();
+    }
+    function AddMedicationHistory() {
+        $.ajax({
+            url: '/MedicalHistory/AddMedicationHistory',
+            type: 'get',
+            success: function (data, textStatus, jqXHR) {
+                $("#medications").append(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('errorThrown=' + errorThrown);
+            }
+        });
+    }
+    function AddAllergyHistory() {
+        $.ajax({
+            url: '/MedicalHistory/AddAllergyHistory',
+            type: 'get',
+            success: function (data, textStatus, jqXHR) {
+                $("#allergies").append(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('errorThrown=' + errorThrown);
+            }
+        });
+    }
+</script>

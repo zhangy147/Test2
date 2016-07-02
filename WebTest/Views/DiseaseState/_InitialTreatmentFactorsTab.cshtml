@@ -1,0 +1,23 @@
+﻿@model List<WebTest.ViewModels.DiseaseTreatmentFactorViewData>
+@using WebTest.HtmlHelpers
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    options.LoadingElementDuration = 1000;
+    //options.UpdateTargetId = "factors_II_tab";
+    options.OnSuccess = "OnAjaxSuccess";
+    options.InsertionMode = InsertionMode.Replace;
+}
+
+@if (Model != null && Model.Count() > 0)
+{
+    using (Ajax.BeginForm("SaveInitialTreatmentFactors", "DiseaseState", options))
+    {
+        @Html.EditorForTreatmentFactorViewDataList(Model)
+    }
+}
+else
+{
+    <p class="text-warning">This page will be populated when Patient profile is created.</p>
+}

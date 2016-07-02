@@ -1,0 +1,25 @@
+﻿@using WebTest.HtmlHelpers
+@model List<WebTest.ViewModels.DiseaseTreatmentFactorViewData>
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 1000;
+    //options.UpdateTargetId = "factors_III_tab";
+    options.InsertionMode = InsertionMode.Replace;
+
+}
+@if (Model != null && Model.Count() > 0)
+{
+    using (Ajax.BeginForm("SaveTreatmentFactorsII", "DiseaseState", options))
+    {
+        @Html.EditorForTreatmentFactorViewDataList(Model)
+    }
+}
+else
+{
+    <p class="text-warning">This page will be populated when prior questions are answered.</p>
+}

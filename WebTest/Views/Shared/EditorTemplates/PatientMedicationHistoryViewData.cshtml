@@ -1,0 +1,34 @@
+﻿@model WebTest.ViewModels.PatientMedicationHistoryViewData
+@if (Model != null) { 
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2">
+            @Html.LabelFor(x => x.DrugName)
+            @Html.TextBoxFor(x => x.DrugName, new { @class = "form-control" })
+        </div>
+        <div class="col-xs-2">
+            @Html.LabelFor(x => x.Dose)
+            @Html.TextBoxFor(x => x.Dose, new { @class = "form-control" })
+        </div>
+        <div class="col-xs-2">
+            @Html.LabelFor(x => x.HowOften)
+            @Html.TextBoxFor(x => x.HowOften, new { @class = "form-control" })
+        </div>
+        <div class="col-xs-3">
+            @Html.LabelFor(x => x.HowLong)
+            @Html.TextBoxFor(x => x.HowLong, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-9">
+            @Html.LabelFor(x => x.Reason)
+            @Html.TextAreaFor(x => x.Reason, new { @rows = 2, @class = "form-control" })
+        </div>
+        <div class="col-xs-3">
+            <a href="#" class="add-medication"><i class="glyphicon glyphicon-plus-sign"></i></a>
+            <a href="#" class="delete-medication"><i class="glyphicon glyphicon-minus-sign"></i></a>
+        </div>
+    </div>
+</div>
+}
+

@@ -1,0 +1,23 @@
+﻿<ul class="nav nav-tabs" id="medical_history_tabs">
+    <li class="active"><a href="#disease_history_tab" data-toggle="tab">@Resources.ProfileTabMedicalHistory</a></li>
+    <li class="disabled"><a href="#system_review_tab" data-toggle="">@Resources.ProfileTabSystemReview</a></li>
+    <li class="disabled"><a href="#family_history_tab" data-toggle="">@Resources.ProfileTabFamilyHistory</a></li>
+    <li class="disabled"><a href="#social_history_tab" data-toggle="">@Resources.ProfileTabSocialHistory</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active well" id="disease_history_tab">
+        @*@Html.Action("GetDiseaseHistory", "MedicalHistory")*@
+    </div>
+    <div class="tab-pane well" id="system_review_tab">
+        @*@Html.Action("GetSystemReview", "MedicalHistory")*@
+    </div>
+    <div class="tab-pane well" id="family_history_tab">
+        @*@Html.Action("GetFamilyHistory", "MedicalHistory")*@
+    </div>
+    <div class="tab-pane well" id="social_history_tab">
+        @*@Html.Action("GetSocialHistory", "MedicalHistory")*@
+    </div>
+</div>
+
+
+

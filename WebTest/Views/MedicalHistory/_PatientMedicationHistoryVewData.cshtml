@@ -1,0 +1,3 @@
+﻿ @model List<WebTest.ViewModels.PatientMedicationHistoryViewData>
+    @using WebTest.HtmlHelpers
+    @Html.EditorForMany(X => X, "medicationHistories")

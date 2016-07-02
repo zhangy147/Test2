@@ -1,0 +1,79 @@
+﻿@model WebTest.ViewModels.PatientViewData
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "procedures_tab";
+    options.InsertionMode = InsertionMode.Replace;
+
+}
+@using (Ajax.BeginForm("SavePatientInformation", "PatientProfile", options))
+{
+@*@using (Html.BeginForm("SavePatientInformation", "PatientProfile"))
+{*@
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true)
+
+        <div class="row form-group">
+            @Html.LabelFor(model => model.Age, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Age, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Age)
+            </div>
+        </div>
+
+        <div class="row form-group">
+            @Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <label class="checkbox-inline">
+                    @Html.RadioButtonFor(model => model.Gender, Resources.GenderMale) @Resources.GenderMale
+                </label>
+                <label class="checkbox-inline">
+                    @Html.RadioButtonFor(model => model.Gender, Resources.GenderFemale) @Resources.GenderFemale
+                </label>
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+
+        <div class="row form-group">
+            @Html.LabelFor(model => model.Ethnic, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Ethnic, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Ethnic)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Disease, "Disease", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="disease-name" placeholder="Name of disease" />
+                @Html.ValidationMessageFor(model => model.Disease)
+                @Html.HiddenFor(model => model.DiseaseID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateDiagnosed, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DateDiagnosed, new { @class = "monthpicker form-control", @placeholder = "[Month and year diagnosed]" })
+                @Html.ValidationMessageFor(model => model.DateDiagnosed)
+            </div>
+        </div>*@
+
+        <div class="row form-group">
+            @Html.LabelFor(model => model.Concerns, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Concerns, new { @class = "form-control", @rows = "10" })
+                @Html.ValidationMessageFor(model => model.Concerns)
+            </div>
+        </div>
+    </div>
+}
+

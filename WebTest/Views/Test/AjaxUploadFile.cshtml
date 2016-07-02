@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "BuildPatientProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/jquery-ui.css")
+@Styles.Render("~/Content/request-step.css")
+@Styles.Render("~/Content/fileinput.min.css")
+@model WebTest.ViewModels.MedicalRecordViewData
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "upload_record_tab";
+    options.InsertionMode = InsertionMode.Replace;
+}
+@using (Ajax.BeginForm("UploadMedicalRecord", "Test", null, options, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label">Record Name:</label>
+            <div class="col-md-10">
+                @*@Html.DropDownList("MedicalRecordID", (SelectList)ViewBag.UnUploadedRecords, new { @class = "form-control" })*@
+                <div id="records_to_upload_div"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateReceived, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DateReceived, new { @class = "monthpicker form-control", @placeholder = "[Month and year received]" })
+                @Html.ValidationMessageFor(model => model.DateReceived)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Hospital, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Hospital, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Hospital)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FileInput, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="FileInput" name="FileInput" type="file" class="file-loading" />
+     
+                @Html.ValidationMessageFor(model => model.FileInput)
+            </div>
+        </div>
+
+        <form id="file-form" action="handler.php" method="POST">
+            <input type="file" id="file-select" name="photos[]" multiple />
+            <button type="submit" id="upload-button">Upload</button>
+        </form>
+
+        <div class="form-group">
+            <div class="col-md-10">
+              <input type="submit" name="upload" value="UPLOAD" />
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/Scripts/jquery.ui.monthpicker.js")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+@Scripts.Render("~/Scripts/FileInput/canvas-to-blol.min.js")
+@Scripts.Render("~/Scripts/FileInput/fileinput.min.js")
+<script>
+    $(function () {
+        $(document).on('ready', function () {
+            $("#FileInput").fileinput({
+                previewFileType: "image",
+                previewClass: "bg-warning",
+                allowedFileExtension: ["jpg", "gif", "png"],
+                browseClass: "btn btn-success",
+                browseLabel: "Pick File",
+                browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i>",
+                removeClass: "btn btn-danger",
+                removeLabel: "Delete",
+                removeIcon: "<i class=\"glyphicon glyphicon-trash\"></i>",
+                uploadClass: "btn btn-info",
+                uploadLabel: "Upload",
+                uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i>"
+            });
+        });
+    }
+    //// Variable to store your files
+    //var files;
+
+    //// Add events
+    //$('input[type=file]').on('change', prepareUpload);
+
+    //// Grab the files and set them to our variable
+    //function prepareUpload(event) {
+    //    files = event.target.files;
+    //}
+    //$('form').on('submit', uploadFiles);
+
+    //function uploadFiles(event) {
+    //    alert('uploadFiles is called');
+    //    event.stopPropagation(); // Stop stuff happening
+    //    event.preventDefault(); // Totally stop stuff happening
+
+    //    // START A LOADING SPINNER HERE
+
+    //    // Create a formdata object and add the files
+    //    var data = new FormData();
+    //    $.each(files, function (key, value) {
+    //        data.append(key, value);
+    //    });
+
+    //    $.ajax({
+    //        url: 'UploadMedicalRecord',
+    //        type: 'POST',
+    //        data: data,
+    //        cache: false,
+    //        dataType: 'json',
+    //        processData: false, // Don't process the files
+    //        contentType: false, // Set content type to false as jQuery will tell the                     
+    //        //server its a query string request
+    //        success: function (data, textStatus, jqXHR) {
+    //            if (typeof data.error === 'undefined') {
+    //                // Success so call function to process the form
+    //                submitForm(event, data);
+    //            }
+    //            else {
+    //                // Handle errors here
+    //                alert('ERRORS: ' + data.error);
+    //            }
+    //        },
+    //        error: function (jqXHR, textStatus, errorThrown) {
+    //            // Handle errors here
+    //            alert('ERRORS: ' + textStatus);
+    //            // STOP LOADING SPINNER
+    //        }
+    //    });
+    //}
+
+    //function submitForm(event, data) {
+    //    // Create a jQuery object from the form
+    //    $form = $(event.target);
+
+    //    // Serialize the form data
+    //    var formData = $form.serialize();
+
+    //    // You should sterilise the file names
+    //    $.each(data.files, function (key, value) {
+    //        formData = formData + '&FileInput[]=' + value;
+    //    });
+
+    //    $.ajax({
+    //        url: 'UploadMedicalRecord',
+    //        type: 'POST',
+    //        data: formData,
+    //        cache: false,
+    //        dataType: 'json',
+    //        success: function (data, textStatus, jqXHR) {
+    //            alert('success');
+    //            if (typeof data.error === 'undefined') {
+    //                // Success so call function to process the form
+    //                alert('SUCCESS: ' + data.success);
+    //            }
+    //            else {
+    //                // Handle errors here
+    //                alert('ERRORS: ' + data.error);
+    //            }
+    //        },
+    //        error: function (jqXHR, textStatus, errorThrown) {
+    //            // Handle errors here
+    //            alert('ERRORS: ' + textStatus);
+    //        },
+    //        complete: function () {
+    //            // STOP LOADING SPINNER
+    //        }
+    //    });
+    //}
+</script>
+}

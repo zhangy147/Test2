@@ -1,0 +1,172 @@
+﻿@model WebTest.ViewModels.PatientSocialHistoryViewData
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "required_records_tab";
+    options.InsertionMode = InsertionMode.Replace;
+}
+@using (Ajax.BeginForm("SaveSocialHistory", "MedicalHistory", options))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label">Marital Status:</label>
+            <div class="col-md-10">
+                @foreach (var ms in (List<WebTest.Models.MaritalStatus>)ViewBag.MaritalStatusList)
+                {
+                    <label class="checkbox-inline">
+                        @Html.RadioButton("MaritalStatus", ms, Model.MaritalStatus == ms ? "checked" : "")
+                        @Html.DisplayFor(s => ms)
+                    </label>
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Enployment Status</label>
+            <div class="col-md-10">
+                @foreach (var employment in (List<WebTest.Models.EmploymentStatus>)ViewBag.EmploymentStatusList)
+                {
+                    <label class="checkbox-inline">
+                        @Html.RadioButton("EmploymentStatus", employment, Model.EmploymentStatus == employment ? "checked" : string.Empty)
+                        @Html.DisplayFor(s => employment)
+                    </label>
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Exercise Level:</label>
+            <div class="col-md-10">
+                @foreach (var exercise in (List<WebTest.Models.ExerciseLevel>)ViewBag.ExerciseLevelList)
+                {
+                    <label class="checkbox-inline">
+                        @Html.RadioButton("ExerciseLevel", exercise, Model.ExerciseLevel == exercise ? "checked" : string.Empty)
+                        @Html.DisplayFor(d => exercise)
+                    </label>
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Current Job If Applicable:</label>
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.CurrentJob, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12"><br /></div>
+        </div>
+        @for (var i = 0; i < Model.SubstanceUses.Count; i++)
+        {
+            if (i == 0)
+            {
+                <div class="form-group">
+
+                    <div class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].Substance)</div>
+                    <div class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].IsCurrentInUse)</div>
+                    <div class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].Quantity)</div>
+                    <div class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].LengthInYear)</div>
+                    <div class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].StoppedInYear)</div>
+
+                </div>
+            }
+            <div class="form-group">
+
+                <div class="col-md-2">@Html.TextBoxFor(s => Model.SubstanceUses[i].Substance, new { @class = "form-control" })</div>
+                <div class="col-md-2">@Html.CheckBoxFor(s => Model.SubstanceUses[i].IsCurrentInUse)</div>
+                <div class="col-md-2">@Html.TextBoxFor(s => Model.SubstanceUses[i].Quantity, new { @class = "form-control" })</div>
+                <div class="col-md-2">@Html.TextBoxFor(s => Model.SubstanceUses[i].LengthInYear, new { @class = "form-control" })</div>
+                <div class="col-md-2">@Html.TextBoxFor(s => Model.SubstanceUses[i].StoppedInYear, new { @class = "form-control" })</div>
+
+            </div>
+        }
+    </div>@*form-horizontal*@
+}
+
+
+
+@*@using (Ajax.BeginForm("SaveSocialHistory", "MedicalHistory", options))
+{
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th class="col-md-3">Marital Status:</th>
+                <td>
+                    @foreach (var ms in (List<WebTest.Models.MaritalStatus>)ViewBag.MaritalStatusList)
+                    {
+                        <div class="radio checkbox-inline">
+                            <label>
+                                @Html.RadioButton("MaritalStatus", ms, Model.MaritalStatus == ms ? "checked" : "")
+                                @Html.DisplayFor(s => ms)
+                            </label>
+                        </div>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Enployment Status:</th>
+                <td>
+                    @foreach (var employment in (List<WebTest.Models.EmploymentStatus>)ViewBag.EmploymentStatusList)
+                    {
+                        <div class="radio checkbox-inline">
+                            <label>
+                                @Html.RadioButton("EmploymentStatus", employment, Model.EmploymentStatus == employment ? "checked" : string.Empty)
+                                @Html.DisplayFor(s => employment)
+                            </label>
+                        </div>
+                    }
+
+                </td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Exercise Level:</th>
+                <td>
+                    @foreach (var exercise in (List<WebTest.Models.ExerciseLevel>)ViewBag.ExerciseLevelList)
+                    {
+                        <div class="radio checkbox-inline">
+                            <label>
+                                @Html.RadioButton("ExerciseLevel", exercise, Model.ExerciseLevel == exercise ? "checked" : string.Empty)
+                                @Html.DisplayFor(d => exercise)
+                            </label>
+                        </div>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Current Job If Applicable:</th>
+                <td>@Html.TextBoxFor(m => m.CurrentJob, new { @class = "form-control" })</td>
+            </tr>
+            <tr>
+                <table class="table table-condensed">
+                    @{
+                    for (var i = 0; i < Model.SubstanceUses.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+                            <thead>
+                                <tr>
+                                    <th class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].Substance)</th>
+                                    <th class="col-md-1">@Html.LabelFor(s => Model.SubstanceUses[i].IsCurrentInUse)</th>
+                                    <th class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].Quantity)</th>
+                                    <th class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].LengthInYear)</th>
+                                    <th class="col-md-2">@Html.LabelFor(s => Model.SubstanceUses[i].StoppedInYear)</th>
+                                </tr>
+                            </thead>
+                            @:<tbody>
+                        }
+                                <tr>
+                                    <td class="col-md-2">@Html.DisplayFor(s => Model.SubstanceUses[i].Substance)</td>
+                                    <td class="col-md-2">@Html.CheckBoxFor(s => Model.SubstanceUses[i].IsCurrentInUse)</td>
+                                    <td class="col-md-2">@Html.TextBoxFor(s => Model.SubstanceUses[i].Quantity, new { @class = "form-control" })</td>
+                                    <td class="col-md-2">@Html.TextBoxFor(s => Model.SubstanceUses[i].LengthInYear, new { @class = "form-control" })</td>
+                                    <td class="col-md-2">@Html.TextBoxFor(s => Model.SubstanceUses[i].StoppedInYear, new { @class = "form-control" })</td>
+                                </tr>
+                    }
+                @:</tbody>
+                    }
+            </table>
+        </tr>
+    </tbody>
+</table>
+}*@

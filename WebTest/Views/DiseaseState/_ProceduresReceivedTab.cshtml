@@ -1,0 +1,54 @@
+﻿@model List<WebTest.ViewModels.DiseaseProcedureViewData>
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "factors_I_tab";
+    options.InsertionMode = InsertionMode.Replace;
+
+}     
+@if (Model != null && Model.Count() > 0)
+{
+    using (Ajax.BeginForm("SaveReceivedProcedures", "DiseaseState", options))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <label>
+                Please select the procedures patient has undertaken:
+            </label>
+            <div class="editor-field">
+                <table class="table">
+                    <tr>
+                        @{
+        int cnt = 0;
+        for (int i = 0; i < Model.Count(); i++ )
+        {
+            if (cnt++ % 3 == 0)
+            {
+                @:</tr><tr>
+            }
+            <td>
+                @Html.HiddenFor(s => Model[i].ProcedureID)
+                <div class="checkbox">
+                    <label>@Html.CheckBoxFor(d => Model[i].IsReceived)@Html.DisplayFor(d => Model[i].Name)</label>
+                </div>
+            </td>
+        }
+                        }
+                </tr>
+                </table>
+            </div>
+        </fieldset>
+    }
+}
+else
+{
+    <p class="text-warning">This page will be populated when Patient Profile is created</p>
+}
+

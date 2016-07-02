@@ -1,0 +1,787 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>关于我们</value>
+  </data>
+  <data name="ACS" xml:space="preserve">
+    <value>美国癌症协会</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>年龄</value>
+  </data>
+  <data name="AgeRange" xml:space="preserve">
+    <value>必须介于1到130</value>
+  </data>
+  <data name="AgeRequired" xml:space="preserve">
+    <value>请输入年龄</value>
+  </data>
+  <data name="AndersonCancerCenter" xml:space="preserve">
+    <value>安德森癌症中心</value>
+  </data>
+  <data name="ASCO" xml:space="preserve">
+    <value>美国临床肿瘤学会</value>
+  </data>
+  <data name="Cancer101" xml:space="preserve">
+    <value>癌症常识</value>
+  </data>
+  <data name="CancerEducation" xml:space="preserve">
+    <value>癌症教育</value>
+  </data>
+  <data name="USACancerInformationAuthorities" xml:space="preserve">
+    <value>美国癌症信息权威机构</value>
+  </data>
+  <data name="CancerRiskAnalysis" xml:space="preserve">
+    <value>癌症风险分析</value>
+  </data>
+  <data name="CancerStageGuide" xml:space="preserve">
+    <value>癌症分期指南</value>
+  </data>
+  <data name="CancerTypeRequired" xml:space="preserve">
+    <value>请选择癌症类型</value>
+  </data>
+  <data name="ChemotherapyAgentSearch" xml:space="preserve">
+    <value>化疗药物搜寻</value>
+  </data>
+  <data name="ChemotherapyLog" xml:space="preserve">
+    <value>化疗日志</value>
+  </data>
+  <data name="ChooseYourLanguage" xml:space="preserve">
+    <value>选择你的语言</value>
+  </data>
+  <data name="ClinicalTrail" xml:space="preserve">
+    <value>临床试验</value>
+  </data>
+  <data name="ClinicalTrailReport" xml:space="preserve">
+    <value>临床试验治疗报告</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>联系方式</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>联系方式</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>创建患者资料</value>
+  </data>
+  <data name="Culture" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="FindDrugInteractions" xml:space="preserve">
+    <value>查询药物相互作用</value>
+  </data>
+  <data name="EvidenceBasedCancerTreatment" xml:space="preserve">
+    <value>循证癌症治疗</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>性别</value>
+  </data>
+  <data name="GenderRequired" xml:space="preserve">
+    <value>请选择性别</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="JapanAssociateinForOncology" xml:space="preserve">
+    <value>日本肿瘤协会</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>姓</value>
+  </data>
+  <data name="LastNameLong" xml:space="preserve">
+    <value>必须小于50个字符</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>请输入姓</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="MostRecentTreatmentReport" xml:space="preserve">
+    <value>最新治疗报告</value>
+  </data>
+  <data name="NCCN" xml:space="preserve">
+    <value>美国国家综合癌症网络</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="OncoLink" xml:space="preserve">
+    <value>OncoLink</value>
+  </data>
+  <data name="OnlineResources" xml:space="preserve">
+    <value>网上资源</value>
+  </data>
+  <data name="OtherCancerInformationSites" xml:space="preserve">
+    <value>其他癌症信息网站</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>储存</value>
+  </data>
+  <data name="InformationServices" xml:space="preserve">
+    <value>信息服务</value>
+  </data>
+  <data name="SpecialTopicReport" xml:space="preserve">
+    <value>专题报告</value>
+  </data>
+  <data name="StageCodeRequired" xml:space="preserve">
+    <value>请选择癌症分期</value>
+  </data>
+  <data name="StandardTreatmentReport" xml:space="preserve">
+    <value>美国规范治疗报告</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="ToolsAndHelper" xml:space="preserve">
+    <value>工具和帮手</value>
+  </data>
+  <data name="TreatmentDecisionAid" xml:space="preserve">
+    <value>治疗决策助手</value>
+  </data>
+  <data name="FeatureMessage" xml:space="preserve">
+    <value>带您走过诊治过程。帮您做出明智决定！</value>
+  </data>
+  <data name="BeyondPhysicalTreatment" xml:space="preserve">
+    <value>治疗外</value>
+  </data>
+  <data name="BoostPatientHealth" xml:space="preserve">
+    <value>增强病人的抗癌抗毒能力</value>
+  </data>
+  <data name="CancerDiagnosis" xml:space="preserve">
+    <value>癌症诊断</value>
+  </data>
+  <data name="UnderstandCancerStages" xml:space="preserve">
+    <value>了解癌症分期</value>
+  </data>
+  <data name="FindNewTreatments" xml:space="preserve">
+    <value>如果治疗没有效果该怎样做?</value>
+  </data>
+  <data name="HandleToxicEffects" xml:space="preserve">
+    <value>处理毒副作用</value>
+  </data>
+  <data name="MakeInformedDecision" xml:space="preserve">
+    <value>做出明智的决定</value>
+  </data>
+  <data name="LiveWithCancer" xml:space="preserve">
+    <value>带癌生存</value>
+  </data>
+  <data name="MaintainTreatmentEffects" xml:space="preserve">
+    <value>维持治疗效果</value>
+  </data>
+  <data name="MakeTreatmentPlan" xml:space="preserve">
+    <value>治疗计划</value>
+  </data>
+  <data name="ExpectationForOfficeVisit" xml:space="preserve">
+    <value>看病时医生会做什么?</value>
+  </data>
+  <data name="ReadPathologicalReport" xml:space="preserve">
+    <value>什么是病理报告?</value>
+  </data>
+  <data name="PreTreatmentEvaluation" xml:space="preserve">
+    <value>治疗前评估</value>
+  </data>
+  <data name="ProceduresForDiagnosis" xml:space="preserve">
+    <value>诊断的常用检查方法</value>
+  </data>
+  <data name="ProceduresOfStaging" xml:space="preserve">
+    <value>分期的常用检查方法</value>
+  </data>
+  <data name="RisksYouHave" xml:space="preserve">
+    <value>你的风险</value>
+  </data>
+  <data name="ScreeningsDue" xml:space="preserve">
+    <value>哪些筛查到期</value>
+  </data>
+  <data name="FindStandardTreatments" xml:space="preserve">
+    <value>比较标准治疗方案</value>
+  </data>
+  <data name="SupportiveCare" xml:space="preserve">
+    <value>支持治疗 - 提高生活质量</value>
+  </data>
+  <data name="SymptomsAlertingYou" xml:space="preserve">
+    <value>让你警 觉的 症状和体征</value>
+  </data>
+  <data name="TreatmentFeasibility" xml:space="preserve">
+    <value>治疗是否可行？</value>
+  </data>
+  <data name="TreatmentAfterProgress" xml:space="preserve">
+    <value>癌症进展后 的治疗</value>
+  </data>
+  <data name="TreatmentAfterRecurrence" xml:space="preserve">
+    <value>肿瘤复发后 的治疗</value>
+  </data>
+  <data name="TreatmentGoals" xml:space="preserve">
+    <value>确定治疗目标</value>
+  </data>
+  <data name="IsTreatmentWorking" xml:space="preserve">
+    <value>治疗有效吗?</value>
+  </data>
+  <data name="UnderTreatment" xml:space="preserve">
+    <value>治疗中</value>
+  </data>
+  <data name="WhenSeeDoctor" xml:space="preserve">
+    <value>何时该去看医生?</value>
+  </data>
+  <data name="BreastCancer" xml:space="preserve">
+    <value>乳腺癌</value>
+  </data>
+  <data name="ColonCancer" xml:space="preserve">
+    <value>结肠癌</value>
+  </data>
+  <data name="GastricCancer" xml:space="preserve">
+    <value>胃癌</value>
+  </data>
+  <data name="HepaticCancer" xml:space="preserve">
+    <value>肝癌</value>
+  </data>
+  <data name="NSCLC" xml:space="preserve">
+    <value>非小细胞肺癌</value>
+  </data>
+  <data name="PancreaticCancer" xml:space="preserve">
+    <value>胰癌</value>
+  </data>
+  <data name="ClinicalTrailReportLegend" xml:space="preserve">
+    <value>帮你找到你关心区域的有关临床试验和相关的治疗方法。 如果目前的所有治疗方法都不理想，实验性治疗可能给你带来新的希望。</value>
+  </data>
+  <data name="NewTreatmentReportLegend" xml:space="preserve">
+    <value>报告最近一年发表的，由美国国家医学图书馆收集在MEDLINE的有效临床治疗方法，包括与当前治疗方法的疗效比较。</value>
+  </data>
+  <data name="SpecialTopicReportLegend" xml:space="preserve">
+    <value>根据病人的个人情况提供基于循证医学为原则的专业文献检索和汇总。让你了解全球范围内医学专家如何治疗与你类似的情况。帮助您和您的家人选择最好的治疗方法。</value>
+  </data>
+  <data name="StandardTreatmentReportLegend" xml:space="preserve">
+    <value>汇总美国权威医疗机构推荐的规范治疗方案。报告详细列出每个治疗方案的治疗指征, 疗效指标, 疗效大小和毒副作用的发生机率，与过去所采用的治疗方案的比较等。</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>了解更多</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>内部管理</value>
+  </data>
+  <data name="CreatePatientProfile" xml:space="preserve">
+    <value>建立病人档案</value>
+  </data>
+  <data name="PatientCancerType" xml:space="preserve">
+    <value>病人的癌症类型</value>
+  </data>
+  <data name="PatientStage" xml:space="preserve">
+    <value>癌症分期</value>
+  </data>
+  <data name="GenderFemale" xml:space="preserve">
+    <value>女</value>
+  </data>
+  <data name="GenderMale" xml:space="preserve">
+    <value>男</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>隐私政策</value>
+  </data>
+  <data name="ReadPrivacyPolicy" xml:space="preserve">
+    <value>阅读关于建立病人个人资料库的隐私政策</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>不知道</value>
+  </data>
+  <data name="AgreePrivacyPolicy" xml:space="preserve">
+    <value>我同意</value>
+  </data>
+  <data name="CommunicationPlatform" xml:space="preserve">
+    <value>沟通平台</value>
+  </data>
+  <data name="ConsultTreatmentInUSA" xml:space="preserve">
+    <value>咨询赴美治疗</value>
+  </data>
+  <data name="DiagnosisAndTreatmentManagement" xml:space="preserve">
+    <value>诊断和治疗管理</value>
+  </data>
+  <data name="ExchangeExperience" xml:space="preserve">
+    <value>交流经验</value>
+  </data>
+  <data name="PrepareForHospitalVisit" xml:space="preserve">
+    <value>就诊准备</value>
+  </data>
+  <data name="SeekSecondOpinion" xml:space="preserve">
+    <value>寻找第二意见</value>
+  </data>
+  <data name="SharePatientConditions" xml:space="preserve">
+    <value>分享病情</value>
+  </data>
+  <data name="SpecialServices" xml:space="preserve">
+    <value>专题服务</value>
+  </data>
+  <data name="StoreMedicalRecords" xml:space="preserve">
+    <value>储存医疗文件</value>
+  </data>
+  <data name="TrackMedicalSpendings" xml:space="preserve">
+    <value>跟踪医疗开支</value>
+  </data>
+  <data name="TrackTreatmentPlan" xml:space="preserve">
+    <value>管理治疗方案</value>
+  </data>
+  <data name="DiseaseIDRequired" xml:space="preserve">
+    <value>请输入疾病ID</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>服务</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>循证医疗信息研究与传播（美国）</value>
+  </data>
+  <data name="BetterDoctorBetterInformation" xml:space="preserve">
+    <value>好医生还需要好信息</value>
+  </data>
+  <data name="EBM_Statement_1" xml:space="preserve">
+    <value>最好的治疗方案由可靠的临床研究证据, 结合医生的专业技术和患者的价值取向做出。</value>
+  </data>
+  <data name="SecondOpinion" xml:space="preserve">
+    <value>医疗第二意见</value>
+  </data>
+  <data name="TreatmentUSA" xml:space="preserve">
+    <value>来美治疗</value>
+  </data>
+  <data name="MedicalConsultingService" xml:space="preserve">
+    <value>美国医疗咨询服务</value>
+  </data>
+  <data name="TreatmentInformationService" xml:space="preserve">
+    <value>专业治疗信息</value>
+  </data>
+  <data name="MedicalTermExplanation" xml:space="preserve">
+    <value>医学术语解释</value>
+  </data>
+  <data name="TestDiseaseRisks" xml:space="preserve">
+    <value>测试疾病风险</value>
+  </data>
+  <data name="WhatIsBestTreatment" xml:space="preserve">
+    <value>对当今威胁人类健康的严重疾病, 如癌症，心血管和免疫疾病， 现代医学还还没有找到有效的治疗方法。其实质是这些疾病的病因复杂，发病机制尚未阐明。这些疾病的治疗方法因人而异，因疾病发展状态而异。换句话说，没有任何治疗方法适合于每个病人和疾病的每一个阶段。所谓最好的治疗方法就是选择那些最适合病人目前个体健康状况的治疗方法。但这些方法一直在更新和完善。需要不断学习和采纳。</value>
+  </data>
+  <data name="WhatIsBestTreatmentLegend" xml:space="preserve">
+    <value>什么是最好的治疗方法？</value>
+  </data>
+  <data name="HowToFindReliableInformationLeged" xml:space="preserve">
+    <value>如何找到可靠的医疗信息?</value>
+  </data>
+  <data name="TestYourOverallHealth" xml:space="preserve">
+    <value>测试你的健康</value>
+  </data>
+  <data name="GenerateReportForDoctor" xml:space="preserve">
+    <value>生成报告</value>
+  </data>
+  <data name="HealthFacts" xml:space="preserve">
+    <value>健康事实</value>
+  </data>
+  <data name="HowEBMHelpMe" xml:space="preserve">
+    <value>如何用循证医学帮助我</value>
+  </data>
+  <data name="LogMedicalSpendings" xml:space="preserve">
+    <value>记录医疗开支</value>
+  </data>
+  <data name="MedicalAuthoritiesInUSA" xml:space="preserve">
+    <value>美国医疗机构</value>
+  </data>
+  <data name="OrganizeMedicalnformation" xml:space="preserve">
+    <value>整理网上信息</value>
+  </data>
+  <data name="PopularHealthWebsitesUSA" xml:space="preserve">
+    <value>美国流行健康网站</value>
+  </data>
+  <data name="PrepareReportForDoctor" xml:space="preserve">
+    <value>为看诊准备报告</value>
+  </data>
+  <data name="ReliableHealthInformation" xml:space="preserve">
+    <value>当你想了解一个特定的疾病或健康状况时, 网络可以是一个很好的信息来源。但你必须判断这些信息的可靠性和准确性。首先你必须知道这些信息是否由专业人员编写和审阅，其次你要知道这些信息是基于专业证据或仅仅是个人意见或经验，再次你要知道这些信息是否过时。
+任何提供健康相关信息的网站，都应该告诉你信息的来源。如果健康信息不是由运行网站的个人或组织编写，应明确说明原始的信息来源和版权声言明。你还需要知道作者是一个人或一组专家，来自什么机构，什么专业，是否通过其他专业人员的审阅，其治疗信息是否基于专业文献的科学证据，是否列出了参考文献等。教科书的内容通常只提供疾病的医学背景信息。新的治疗方式一般来自专业文献，而且必须通过严格的评估尚可使用。</value>
+  </data>
+  <data name="WhatIsReliableHealthInformation" xml:space="preserve">
+    <value>什么是可靠的健康信息？</value>
+  </data>
+  <data name="MyAccess" xml:space="preserve">
+    <value>创建个人账户并提供必要的病情介绍，选择你想获得哪方面的信息， 我们将相关文章发布到您的个人账户下。 所有文章均由专业人员精心编写, 编译和审阅。我们的在线工具可以提供就医前信息准备，向医生提出的问题和下一步诊疗指南, 也可以帮你比较治疗方法, 跟踪治疗进展和副作用, 以及记录医疗费用等。我们的工具还可以帮助您组织, 存储和分享从其他来源收集到的医疗信息。</value>
+  </data>
+  <data name="PersonalMedicalInformationManagement" xml:space="preserve">
+    <value>医疗信息 —  量身订做, 自我管理</value>
+  </data>
+  <data name="ReceiveSecondOpinion" xml:space="preserve">
+    <value>我们特约的国内和美国医学专家, 或美国顶级医院将审查患者的诊断和治疗情况，解答疑问，并提供全面的诊疗审查报告。</value>
+  </data>
+  <data name="ReceiveTreatmentFromUSA" xml:space="preserve">
+    <value>如果您想前来美国接受治疗或获取药物，我们将帮您联系所需的医院或诊所，翻译你的就诊资料，并提供任何必要的帮助，包括交通和住宿。</value>
+  </data>
+  <data name="HotTopic" xml:space="preserve">
+    <value>热门话题</value>
+  </data>
+  <data name="CommonQA" xml:space="preserve">
+    <value>常见问题解答</value>
+  </data>
+  <data name="CheckSymptom" xml:space="preserve">
+    <value>检查症状</value>
+  </data>
+  <data name="CompareDiseases" xml:space="preserve">
+    <value>对比和鉴别疾病</value>
+  </data>
+  <data name="DiagnosisAndTreatmentConsulting" xml:space="preserve">
+    <value>诊疗咨询</value>
+  </data>
+  <data name="ExpertConsulting" xml:space="preserve">
+    <value>中美专家咨询</value>
+  </data>
+  <data name="HealthTopics" xml:space="preserve">
+    <value>健康话题</value>
+  </data>
+  <data name="OnlineTools" xml:space="preserve">
+    <value>在线工具</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="OnlineClinicUnderDevelopment" xml:space="preserve">
+    <value>敬请期待, 网上门诊正在开发中......</value>
+  </data>
+  <data name="Disease101" xml:space="preserve">
+    <value>疾病常识</value>
+  </data>
+  <data name="Diseases" xml:space="preserve">
+    <value>疾病</value>
+  </data>
+  <data name="EditingBoard" xml:space="preserve">
+    <value>编辑成员</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>建议反馈</value>
+  </data>
+  <data name="Medicines" xml:space="preserve">
+    <value>药物</value>
+  </data>
+  <data name="ReviewingBoard" xml:space="preserve">
+    <value>审阅成员</value>
+  </data>
+  <data name="Symptoms" xml:space="preserve">
+    <value>症状</value>
+  </data>
+  <data name="TestsAndProcedures" xml:space="preserve">
+    <value>化验和检测</value>
+  </data>
+  <data name="Explanation" xml:space="preserve">
+    <value>解释</value>
+  </data>
+  <data name="TermRequired" xml:space="preserve">
+    <value>请输入医学术语</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="BestTreatmentReport" xml:space="preserve">
+    <value>最佳疗法报告</value>
+  </data>
+  <data name="ExpertSecondOpinion" xml:space="preserve">
+    <value>专家诊疗意见</value>
+  </data>
+  <data name="OnlineLiveConsulting" xml:space="preserve">
+    <value>在线医疗咨询</value>
+  </data>
+  <data name="TreatmentServiceInUSA" xml:space="preserve">
+    <value>来美就医服务</value>
+  </data>
+  <data name="EvidenceBasedMedicine" xml:space="preserve">
+    <value>循证医学</value>
+  </data>
+  <data name="USAHospitalIntroduction" xml:space="preserve">
+    <value>美国医院介绍</value>
+  </data>
+  <data name="USAOnlineMedicalResources" xml:space="preserve">
+    <value>美国在线医疗资源</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>进入</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>帐户</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="DiseaseNameRequired" xml:space="preserve">
+    <value>请输入病名</value>
+  </data>
+  <data name="DiagnosisDateRequired" xml:space="preserve">
+    <value>请提供诊断日期</value>
+  </data>
+  <data name="DiseaseMustBeSelected" xml:space="preserve">
+    <value>请从列表中选择病名</value>
+  </data>
+  <data name="PatientAge" xml:space="preserve">
+    <value>年龄</value>
+  </data>
+  <data name="PatientDiagnosedFrom" xml:space="preserve">
+    <value>诊断医院</value>
+  </data>
+  <data name="PatientDiagnosedOn" xml:space="preserve">
+    <value>诊断日期(年和月)</value>
+  </data>
+  <data name="PatientDiagnosis" xml:space="preserve">
+    <value>诊断</value>
+  </data>
+  <data name="PatientEthnicGroup" xml:space="preserve">
+    <value>族裔</value>
+  </data>
+  <data name="PatientGoals" xml:space="preserve">
+    <value>主要目的</value>
+  </data>
+  <data name="PatientMainConcerns" xml:space="preserve">
+    <value>主要关心的问题</value>
+  </data>
+  <data name="PatientSex" xml:space="preserve">
+    <value>性别</value>
+  </data>
+  <data name="ProfileStep1" xml:space="preserve">
+    <value>第一步:  建立病人档案</value>
+  </data>
+  <data name="ProfileStep2" xml:space="preserve">
+    <value>第二步: 表明当前病情</value>
+  </data>
+  <data name="ProfileStep3" xml:space="preserve">
+    <value>第三步: 提供病史信息</value>
+  </data>
+  <data name="ProfileStep4" xml:space="preserve">
+    <value>第四步: 上传病历和诊断影像</value>
+  </data>
+  <data name="ProfileStep5" xml:space="preserve">
+    <value>第五步:  确认服务和付款</value>
+  </data>
+  <data name="ProfileNextPage" xml:space="preserve">
+    <value>下一页</value>
+  </data>
+  <data name="ProfilePreviousPage" xml:space="preserve">
+    <value>上一页</value>
+  </data>
+  <data name="ProfileTabOverallHealth" xml:space="preserve">
+    <value>总体健康</value>
+  </data>
+  <data name="ProfileTabPatient" xml:space="preserve">
+    <value>病人</value>
+  </data>
+  <data name="ProfileTabDiagnosis" xml:space="preserve">
+    <value>诊断</value>
+  </data>
+  <data name="ProfileTabFamilyHistory" xml:space="preserve">
+    <value>家族史</value>
+  </data>
+  <data name="ProfileTabMakePayment" xml:space="preserve">
+    <value>付款</value>
+  </data>
+  <data name="ProfileTabMedicalHistory" xml:space="preserve">
+    <value>医疗史</value>
+  </data>
+  <data name="ProfileTabPreTreatmentEvaluation" xml:space="preserve">
+    <value>疗前评估</value>
+  </data>
+  <data name="ProfileTabProceduresReceived" xml:space="preserve">
+    <value>诊断程序</value>
+  </data>
+  <data name="ProfileTabRequiredRecords" xml:space="preserve">
+    <value>所需医疗记录</value>
+  </data>
+  <data name="ProfileTabServiceSummary" xml:space="preserve">
+    <value>服务概要</value>
+  </data>
+  <data name="ProfileTabSocialHistory" xml:space="preserve">
+    <value>社会史</value>
+  </data>
+  <data name="ProfileTabStateOfDisease" xml:space="preserve">
+    <value>疾病状况</value>
+  </data>
+  <data name="ProfileTabSystemReview" xml:space="preserve">
+    <value>系统回顾</value>
+  </data>
+  <data name="ProfileTabUploadedRecords" xml:space="preserve">
+    <value>已上传医疗记录</value>
+  </data>
+  <data name="ProfileTabUploadRecord" xml:space="preserve">
+    <value>上传医疗记录</value>
+  </data>
+  <data name="PlaceHolderMonthAndYearDiagnosed" xml:space="preserve">
+    <value>[诊断年月]</value>
+  </data>
+  <data name="PlaceHolderNameOfDisease" xml:space="preserve">
+    <value>[病名]</value>
+  </data>
+  <data name="AlertCreateProfileFirst" xml:space="preserve">
+    <value>请首先建立病人档案。</value>
+  </data>
+  <data name="AlertSystemIssue" xml:space="preserve">
+    <value>该网站遇到了问题，请稍后再试。</value>
+  </data>
+  <data name="EthnicGroupRequired" xml:space="preserve">
+    <value>请选择族裔</value>
+  </data>
+  <data name="TreatmentReportIntroduction" xml:space="preserve">
+    <value>简介</value>
+  </data>
+  <data name="TreatmentReportProcedures" xml:space="preserve">
+    <value>报告制作程序</value>
+  </data>
+  <data name="TreatmentReportSample" xml:space="preserve">
+    <value>报告样本</value>
+  </data>
+  <data name="MonthPickerApr" xml:space="preserve">
+    <value>四月</value>
+  </data>
+  <data name="MonthPickerAug" xml:space="preserve">
+    <value>八月</value>
+  </data>
+  <data name="MonthPickerDec" xml:space="preserve">
+    <value>十二月</value>
+  </data>
+  <data name="MonthPickerFeb" xml:space="preserve">
+    <value>二月</value>
+  </data>
+  <data name="MonthPickerJan" xml:space="preserve">
+    <value>一月</value>
+  </data>
+  <data name="MonthPickerJul" xml:space="preserve">
+    <value>七月</value>
+  </data>
+  <data name="MonthPickerJun" xml:space="preserve">
+    <value>六月</value>
+  </data>
+  <data name="MonthPickerMar" xml:space="preserve">
+    <value>三月</value>
+  </data>
+  <data name="MonthPickerMay" xml:space="preserve">
+    <value>五月</value>
+  </data>
+  <data name="MonthPickerNov" xml:space="preserve">
+    <value>十一月</value>
+  </data>
+  <data name="MonthPickerOct" xml:space="preserve">
+    <value>十月</value>
+  </data>
+  <data name="MonthPickerSep" xml:space="preserve">
+    <value>九月</value>
+  </data>
+  <data name="TreatmentReportOverview" xml:space="preserve">
+    <value>最佳治疗方法是指疗效最大，对机体伤害最小的治疗方法。同时能够满足花费和应用便利的要求。要知道如何获得最佳治疗方法，你需要首先理解循证医学的概念。循证医学是近二十年来发达国家广泛采用的新的医疗模式。它是有机整合现有的最好的治疗成果、医生的专业技能和病人自身需求的一门科学。最好的治疗方法是经受循证医学的严格标准检验而证明有效的治疗方法。对于当今严重危害人类健康的疾病如癌症和心血管疾病，治疗方法在不断发展和演化。没有哪一种治疗适用于每一个病人。找到有效和安全的治疗方法可以改变人生。</value>
+  </data>
+</root>

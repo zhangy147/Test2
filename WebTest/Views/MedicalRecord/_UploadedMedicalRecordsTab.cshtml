@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WebTest.ViewModels.UploadedMedicalRecordViewData>
+@using WebTest.HtmlHelpers
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "GET";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "service_summary_tab";
+    options.InsertionMode = InsertionMode.Replace;
+}
+@using (Ajax.BeginForm("GetServiceSummary", "Service", options))
+{
+    <div class="form-horizontal small_images_container">
+        <div class="form-group">
+            <label class="col-md-12">Medical records have been uploaded. Move the cursor to the icon to see large image.</label>
+        </div>
+        <div class="form-group">
+            @{
+    int cnt = 0;
+    foreach (var record in Model)
+    {
+        if (cnt++ % 3 == 0)
+        {
+            @:</div><div class="form-group small_images_container">
+            }
+            @: <div class="col-md-4">
+var thumbNailUrl = Url.Action("GetRecordThumbnail", "MedicalRecord", new { imageName = record.FileName, width = 40, height = 40 });
+if (thumbNailUrl.ToString().IndexOf("file_not_available") < 0)
+{
+    <img src="@thumbNailUrl" /> @record.RecordName<div class="big_image_container"></div>
+}
+    @:</div>
+}@*foreach*@
+            }
+        </div>@*form-group*@
+    </div>@*form-horizontal*@
+}@*using clause*@
+
+
+<script language="javascript">
+    $(document).ready(function () {
+        $('.small_images_container img').hover(function () {
+            // get the image and its 'src' attribute...
+            var smallImage = $(this);
+            var smallImageIndex = $('.small_images_container img').index($(this));
+            var src = smallImage.attr('src');
+
+            // split the 'src' attribute to retrieve the image file name
+            src = src.split('?');
+            //alert(src[1]);
+            src = src[1].split('&');
+            //alert(src[0]);
+            src = src[0].split('=');
+            var filename = src[1];
+            //alert(fn);
+            // now we can create the image we're going to put in the
+            var $largeImageContainer = $('.big_image_container').eq(smallImageIndex);
+
+            var largeImage = new Image();
+            largeImage.src = "/MedicalRecord/GetRecordThumbnail?imageName=" + filename + "&width=400&height=400";
+            largeImage.onload = function () {
+                //$('.big_image_container').empty().append(largeImage);
+                $largeImageContainer.empty().append(largeImage);
+            }
+            largeImage.onerror = function () {
+                //$('#big_image_container').empty().html('That image is not available.');
+                $largeImageContainer.empty().empty().html('That image is not available.');
+            }
+            $largeImageContainer.empty().empty().html('Loading...');
+            //$('#big_image_container').empty().html('Loading...');
+
+            //$largeImageContainer.show();
+            return false;
+        }, function () {
+            //alert($(this).attr('src'));
+            var smallImageIndex = $('.small_images_container img').index($(this));
+            $('.big_image_container').eq(smallImageIndex).empty();
+            //$largeImageContainer.hide();
+            //$('#big_image_container').hide();
+            return false;
+        });
+    });
+</script>

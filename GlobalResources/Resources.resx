@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="ACS" xml:space="preserve">
+    <value>ACS</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="AgeRange" xml:space="preserve">
+    <value>Must be between 1 and 130</value>
+  </data>
+  <data name="AgeRequired" xml:space="preserve">
+    <value>Age is required</value>
+  </data>
+  <data name="ASCO" xml:space="preserve">
+    <value>ASCO</value>
+  </data>
+  <data name="Cancer101" xml:space="preserve">
+    <value>Cancer 101</value>
+  </data>
+  <data name="CancerEducation" xml:space="preserve">
+    <value>Cancer Education</value>
+  </data>
+  <data name="CancerRiskAnalysis" xml:space="preserve">
+    <value>Cancer Risk Analysis</value>
+  </data>
+  <data name="CancerTypeRequired" xml:space="preserve">
+    <value>Cancer type is required</value>
+  </data>
+  <data name="ChooseYourLanguage" xml:space="preserve">
+    <value>Choose Your Language</value>
+  </data>
+  <data name="ClinicalTrailReport" xml:space="preserve">
+    <value>Clinical Trail Report</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="FindDrugInteractions" xml:space="preserve">
+    <value>Find Drug Interactions</value>
+  </data>
+  <data name="Culture" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="EvidenceBasedCancerTreatment" xml:space="preserve">
+    <value>Evidence Based Cancer Treatment</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="GenderRequired" xml:space="preserve">
+    <value>Gender is required</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="LastNameLong" xml:space="preserve">
+    <value>Msut be less than 50 characters</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>Last name is required</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Log On</value>
+  </data>
+  <data name="MostRecentTreatmentReport" xml:space="preserve">
+    <value>Most Recent Treatment Report</value>
+  </data>
+  <data name="NCCN" xml:space="preserve">
+    <value>NCCN</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="OnlineResources" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="InformationServices" xml:space="preserve">
+    <value>Information Services</value>
+  </data>
+  <data name="StageCodeRequired" xml:space="preserve">
+    <value>Stage code is required</value>
+  </data>
+  <data name="StandardTreatmentReport" xml:space="preserve">
+    <value>Standard Treatment Report</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="ToolsAndHelper" xml:space="preserve">
+    <value>Tools &amp; Helper</value>
+  </data>
+  <data name="AndersonCancerCenter" xml:space="preserve">
+    <value>Anderson Cancer Center</value>
+  </data>
+  <data name="USACancerInformationAuthorities" xml:space="preserve">
+    <value>Cancer Information Authorities in USA</value>
+  </data>
+  <data name="CancerInstitutes" xml:space="preserve">
+    <value>Cancer Institutes</value>
+  </data>
+  <data name="CancerStageGuide" xml:space="preserve">
+    <value>Cancer Stage Guide</value>
+  </data>
+  <data name="ChemotherapyAgentSearch" xml:space="preserve">
+    <value>Chemotherapy Agent Search</value>
+  </data>
+  <data name="ChemotherapyLog" xml:space="preserve">
+    <value>ChemotherapyLog</value>
+  </data>
+  <data name="ClinicalTrail" xml:space="preserve">
+    <value>Clinical Trail</value>
+  </data>
+  <data name="JapanAssociateinForOncology" xml:space="preserve">
+    <value>Japan Associatein for Oncology</value>
+  </data>
+  <data name="MedicalTerms" xml:space="preserve">
+    <value>Medical Terms</value>
+  </data>
+  <data name="OncoLink" xml:space="preserve">
+    <value>OncoLink</value>
+  </data>
+  <data name="OtherCancerInformationSites" xml:space="preserve">
+    <value>Other Cancer Information Sites</value>
+  </data>
+  <data name="SpecialTopicReport" xml:space="preserve">
+    <value>Special Topic Report</value>
+  </data>
+  <data name="TreatmentDecisionAid" xml:space="preserve">
+    <value>Treatment Decision Aid</value>
+  </data>
+  <data name="FeatureMessage" xml:space="preserve">
+    <value>Walk you through the diagnosis and treatment processes. Help you make informed treatment decision!</value>
+  </data>
+  <data name="BeyondPhysicalTreatment" xml:space="preserve">
+    <value>Beyond physical treatment</value>
+  </data>
+  <data name="BoostPatientHealth" xml:space="preserve">
+    <value>Boost patient's overal health?</value>
+  </data>
+  <data name="CancerDiagnosis" xml:space="preserve">
+    <value>Cancer Diagnosis</value>
+  </data>
+  <data name="UnderstandCancerStages" xml:space="preserve">
+    <value>Understand cancer stage</value>
+  </data>
+  <data name="FindNewTreatments" xml:space="preserve">
+    <value>What to do if no treatment seemingly working?</value>
+  </data>
+  <data name="HandleToxicEffects" xml:space="preserve">
+    <value>Handle toxic or side effects</value>
+  </data>
+  <data name="MakeInformedDecision" xml:space="preserve">
+    <value>Make informed decision - put all together</value>
+  </data>
+  <data name="LiveWithCancer" xml:space="preserve">
+    <value>Live with Cancer</value>
+  </data>
+  <data name="MaintainTreatmentEffects" xml:space="preserve">
+    <value>Maintain treatment effects</value>
+  </data>
+  <data name="MakeTreatmentPlan" xml:space="preserve">
+    <value>Make Treatment Plan</value>
+  </data>
+  <data name="ExpectationForOfficeVisit" xml:space="preserve">
+    <value>What to expect during office visit?</value>
+  </data>
+  <data name="ReadPathologicalReport" xml:space="preserve">
+    <value>What does pathological report mean to you</value>
+  </data>
+  <data name="PreTreatmentEvaluation" xml:space="preserve">
+    <value>Pre-Treatment Evaluation</value>
+  </data>
+  <data name="ProceduresForDiagnosis" xml:space="preserve">
+    <value>Procedures commonly used to diagnoze this cancer</value>
+  </data>
+  <data name="ProceduresOfStaging" xml:space="preserve">
+    <value>Procedures used to stage this cancer</value>
+  </data>
+  <data name="RisksYouHave" xml:space="preserve">
+    <value>Risks you may have</value>
+  </data>
+  <data name="ScreeningsDue" xml:space="preserve">
+    <value>Screenings are due</value>
+  </data>
+  <data name="FindStandardTreatments" xml:space="preserve">
+    <value>Find and compare standard treatment options</value>
+  </data>
+  <data name="SupportiveCare" xml:space="preserve">
+    <value>Supportive Care - improve the quality of life</value>
+  </data>
+  <data name="SymptomsAlertingYou" xml:space="preserve">
+    <value>Symptoms and signs alerting you</value>
+  </data>
+  <data name="TreatmentFeasibility" xml:space="preserve">
+    <value>Is the treatment feasible?</value>
+  </data>
+  <data name="TreatmentAfterProgress" xml:space="preserve">
+    <value>Treatment when cancer progresses</value>
+  </data>
+  <data name="TreatmentAfterRecurrence" xml:space="preserve">
+    <value>Treatment when cancer comes back</value>
+  </data>
+  <data name="TreatmentGoals" xml:space="preserve">
+    <value>Determine treatment goals</value>
+  </data>
+  <data name="IsTreatmentWorking" xml:space="preserve">
+    <value>Is the teatment working?</value>
+  </data>
+  <data name="UnderTreatment" xml:space="preserve">
+    <value>Under Treatment</value>
+  </data>
+  <data name="WhenSeeDoctor" xml:space="preserve">
+    <value>When You Should See Doctor?</value>
+  </data>
+  <data name="BreastCancer" xml:space="preserve">
+    <value>Breast Cancer</value>
+  </data>
+  <data name="ColonCancer" xml:space="preserve">
+    <value>Colon Cancer</value>
+  </data>
+  <data name="GastricCancer" xml:space="preserve">
+    <value>Stomach Cancer</value>
+  </data>
+  <data name="HepaticCancer" xml:space="preserve">
+    <value>Liver Cancer</value>
+  </data>
+  <data name="NSCLC" xml:space="preserve">
+    <value>Non-Small Cell Lung Cancer</value>
+  </data>
+  <data name="PancreaticCancer" xml:space="preserve">
+    <value>Pancrea Cancer</value>
+  </data>
+  <data name="ClinicalTrailReportLegend" xml:space="preserve">
+    <value>Find clinical trails in patient's interested location. The experimental treatment may be helpful if current treatment cannot stop cancer from growing or patient exhausted all effective treatment options.</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
+  <data name="NewTreatmentReportLegend" xml:space="preserve">
+    <value>List treatments published in recent months that have not been adopted into standard treatments, but have potential benefits to patients.</value>
+  </data>
+  <data name="SpecialTopicReportLegend" xml:space="preserve">
+    <value>We can provide evidence-based research specific for your individual situation. The information collected from professinal journals contributed by all kind of experts in cancer treatment may help you choose most meaningful decision for you and your family.</value>
+  </data>
+  <data name="StandardTreatmentReportLegend" xml:space="preserve">
+    <value>Profesional summary of treatment options recommended by main authorities in US, Japan and China. The report lists detailed information about how the treatment may affect patient's survivor and quality of life, including the size and frequency of each treatment and toxic effect, what questions to ask from doctors.</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Administration</value>
+  </data>
+  <data name="CreatePatientProfile" xml:space="preserve">
+    <value>Cretae Patient Profile</value>
+  </data>
+  <data name="PatientCancerType" xml:space="preserve">
+    <value>Cancer Type</value>
+  </data>
+  <data name="PatientStage" xml:space="preserve">
+    <value>Stage</value>
+  </data>
+  <data name="GenderFemale" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="GenderMale" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="ReadPrivacyPolicy" xml:space="preserve">
+    <value>Read Privacy Polict for Creating Patient Profile</value>
+  </data>
+  <data name="Unknow" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="AgreePrivacyPolicy" xml:space="preserve">
+    <value>I Agree</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="CommunicationPlatform" xml:space="preserve">
+    <value>Communication Platform</value>
+  </data>
+  <data name="ConsultTreatmentInUSA" xml:space="preserve">
+    <value>Consult Treatment In USA</value>
+  </data>
+  <data name="ExchangeExperience" xml:space="preserve">
+    <value>Exchange Experience</value>
+  </data>
+  <data name="PrepareForHospitalVisit" xml:space="preserve">
+    <value>Prepare Hospital Visit</value>
+  </data>
+  <data name="SeekSecondOpinion" xml:space="preserve">
+    <value>Seek Second Opinion</value>
+  </data>
+  <data name="SharePatientConditions" xml:space="preserve">
+    <value>Share Patient Conditions</value>
+  </data>
+  <data name="SpecialServices" xml:space="preserve">
+    <value>Special Services</value>
+  </data>
+  <data name="StoreMedicalRecords" xml:space="preserve">
+    <value>Store Medical Records</value>
+  </data>
+  <data name="TrackMedicalSpendings" xml:space="preserve">
+    <value>Track Medical Spendings</value>
+  </data>
+  <data name="TrackTreatmentPlan" xml:space="preserve">
+    <value>Track Treatment Plan</value>
+  </data>
+  <data name="DiseaseIDRequired" xml:space="preserve">
+    <value>Disease ID is required</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Evidence-Based Medical Information Research &amp; Spread (USA)</value>
+  </data>
+  <data name="BetterDoctorBetterInformation" xml:space="preserve">
+    <value>Better Doctor Needs Better Information</value>
+  </data>
+  <data name="EBM_Statement_1" xml:space="preserve">
+    <value>Best clinical decisions depends on the best research evidence, integrated with physician’s clinical expertise and patient value.</value>
+  </data>
+  <data name="SecondOpinion" xml:space="preserve">
+    <value>Seeking Second Opinion</value>
+  </data>
+  <data name="TreatmentUSA" xml:space="preserve">
+    <value>Seeking Treatment in USA</value>
+  </data>
+  <data name="MedicalConsultingService" xml:space="preserve">
+    <value>Medical Consulting Service</value>
+  </data>
+  <data name="TreatmentInformationService" xml:space="preserve">
+    <value>Evidence-basedl Treatment Information Service</value>
+  </data>
+  <data name="MedicalTermExplanation" xml:space="preserve">
+    <value>Medical Term Explanation</value>
+  </data>
+  <data name="TestDiseaseRisks" xml:space="preserve">
+    <value>Check Risks for Disease</value>
+  </data>
+  <data name="TreatmentReportOverview" xml:space="preserve">
+    <value>Best treatment is the treatment that most likely to yield treatment effects, least likely to cause harms to your body and meets your other expectations such as cost and convenience. To find the best treatment, you need to understand the concepts of evidence-based medicine (EBM). EBM is a new health care model widely implemented in the developed countries in the past twenty years. It is the science of integrating the best available evidence with the doctor’s expertise and patient’s values. Best treatment is the treatment has been proved effective with the vigorous criteria of EBM. To most diseases seriously threaten human health today like cancers and cardiovascular diseases, treatment are constantly evolved and developed. No single method can be applied to every patient. Find the available treatment that effective and safe can be life changing.</value>
+  </data>
+  <data name="WhatIsBestTreatmentLegend" xml:space="preserve">
+    <value>What Is Best Treatment?</value>
+  </data>
+  <data name="HowToFindReliableInformationLeged" xml:space="preserve">
+    <value>How to Find Reliable Medical Information?</value>
+  </data>
+  <data name="TestYourOverallHealth" xml:space="preserve">
+    <value>Test Your Overall Health</value>
+  </data>
+  <data name="GenerateReportForDoctor" xml:space="preserve">
+    <value>Generate Report for Doctor</value>
+  </data>
+  <data name="HealthFacts" xml:space="preserve">
+    <value>Health Facts</value>
+  </data>
+  <data name="HowEBMHelpMe" xml:space="preserve">
+    <value>How Can Evidence Based Medicine Help Me?</value>
+  </data>
+  <data name="LogMedicalSpendings" xml:space="preserve">
+    <value>Log Medical Spendings</value>
+  </data>
+  <data name="MedicalAuthoritiesInUSA" xml:space="preserve">
+    <value>Medical authorities in USA</value>
+  </data>
+  <data name="OrganizeMedicalnformation" xml:space="preserve">
+    <value>Organize Medical Information</value>
+  </data>
+  <data name="PrepareReportForDoctor" xml:space="preserve">
+    <value>Prepare Report For Doctor</value>
+  </data>
+  <data name="PopularHealthWebsitesUSA" xml:space="preserve">
+    <value>Popular Health Websites In USA</value>
+  </data>
+  <data name="ReliableHealthInformation" xml:space="preserve">
+    <value>When you want to know a specific disease or health condition, the network can be a good source of information. But you have to judge the reliability and accuracy of this information. First of all you need to know whether the information written and reviewed by professionals. Then you need to know if the evidence is based on evidence or personal opinion or experience. last you have to know if the information is out of date.
+Any site offers health-related information should tell you the source of the information. If the health information is not written by an individual or organization running the site,  the original sources of information should be clearly stated and copyright should be claimed. You also need to know if the author is a person or a group of experts, what institutions they are from, what medical specialties they are in, whether the information was reviewded  by other professionals, if the treatment information is based on scientific evidence published in professional literatures, if references are listed and so on. Content from textbooks usually provide only medical background information on the disease. The new treatment is generally from professional journals and must be evaluated with strict standards.</value>
+  </data>
+  <data name="WhatIsReliableHealthInformation" xml:space="preserve">
+    <value>What is reliable health information</value>
+  </data>
+  <data name="ReceiveSecondOpinion" xml:space="preserve">
+    <value>Our domestic and American medical expert will review patient's individual diagnostic and treatment situation, answer individual questions and provide a comprehensive treatment report.</value>
+  </data>
+  <data name="MyAccess" xml:space="preserve">
+    <value>After you create your patient profile, you will receive individualized medical information related to your personal health situation. Our tools may also help you organize and store the medical information you collected from other sources, generate various reports to help you understand and walk through the complicated diagnostic and treatment processes, and manage your treatment plan and experience.</value>
+  </data>
+  <data name="PersonalMedicalInformationManagement" xml:space="preserve">
+    <value>Personal Medical Information Management</value>
+  </data>
+  <data name="ReceiveTreatmentFromUSA" xml:space="preserve">
+    <value>If you would like to come to USA to receive treatment or obtain medicine, we will provide help to communicate with the desired hospital or clinic, translate your patient profile and provide any necessary help, inlcuding  transportation and accomodation.</value>
+  </data>
+  <data name="HotTopics" xml:space="preserve">
+    <value>Hot Topics</value>
+  </data>
+  <data name="CommonQA" xml:space="preserve">
+    <value>Common Q &amp; A</value>
+  </data>
+  <data name="CheckSymptom" xml:space="preserve">
+    <value>Check Symptom</value>
+  </data>
+  <data name="CompareDiseases" xml:space="preserve">
+    <value>Compare Diseases</value>
+  </data>
+  <data name="DiagnosisAndTreatmentConsulting" xml:space="preserve">
+    <value>Diagnosis &amp; Treatment Consulting</value>
+  </data>
+  <data name="ExpertConsulting" xml:space="preserve">
+    <value>Domestic and USA Expert Consulting</value>
+  </data>
+  <data name="HealthTopics" xml:space="preserve">
+    <value>Health Topics</value>
+  </data>
+  <data name="OnlineTools" xml:space="preserve">
+    <value>Online Tools</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="OnlineClinicUnderDevelopment" xml:space="preserve">
+    <value>please wait, the online clinic is on the way...</value>
+  </data>
+  <data name="Disease101" xml:space="preserve">
+    <value>Disease 101</value>
+  </data>
+  <data name="Diseases" xml:space="preserve">
+    <value>Diseases</value>
+  </data>
+  <data name="EditingBoard" xml:space="preserve">
+    <value>Editing Board</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="Medicines" xml:space="preserve">
+    <value>Medicines</value>
+  </data>
+  <data name="ReviewingBoard" xml:space="preserve">
+    <value>Reviewing Board</value>
+  </data>
+  <data name="Symptoms" xml:space="preserve">
+    <value>Symptoms</value>
+  </data>
+  <data name="TestsAndProcedures" xml:space="preserve">
+    <value>Tests &amp; Procedures</value>
+  </data>
+  <data name="Explanation" xml:space="preserve">
+    <value>Explanation</value>
+  </data>
+  <data name="TermRequired" xml:space="preserve">
+    <value>Please enter a valid medical term</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="BestTreatmentReport" xml:space="preserve">
+    <value>Best Treatment Report</value>
+  </data>
+  <data name="ExpertSecondOpinion" xml:space="preserve">
+    <value>Expert Second Opinion</value>
+  </data>
+  <data name="OnlineLiveConsulting" xml:space="preserve">
+    <value>Online Live Consulting</value>
+  </data>
+  <data name="TreatmentServiceInUSA" xml:space="preserve">
+    <value>Receive Treatment in USA</value>
+  </data>
+  <data name="EvidenceBasedMedicine" xml:space="preserve">
+    <value>Evidence Based Medicine (EBM)</value>
+  </data>
+  <data name="USAHospitalIntroduction" xml:space="preserve">
+    <value>USA Hospital Introduction</value>
+  </data>
+  <data name="USAOnlineMedicalResources" xml:space="preserve">
+    <value>USA Online Medical Resources</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="DiseaseNameRequired" xml:space="preserve">
+    <value>Disease name is required</value>
+  </data>
+  <data name="DiagnosisDateRequired" xml:space="preserve">
+    <value>Please provide the month and year the diagnosis was made</value>
+  </data>
+  <data name="DiseaseMustBeSelected" xml:space="preserve">
+    <value>Please choose  a disease from the list</value>
+  </data>
+  <data name="PatientAge" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="PatientDiagnosedFrom" xml:space="preserve">
+    <value>Hospital the Diagnosis Made</value>
+  </data>
+  <data name="PatientDiagnosedOn" xml:space="preserve">
+    <value>Month/Year Diagnosed</value>
+  </data>
+  <data name="PatientDiagnosis" xml:space="preserve">
+    <value>Diagnosis</value>
+  </data>
+  <data name="PatientEthnicGroup" xml:space="preserve">
+    <value>Ethnic Group</value>
+  </data>
+  <data name="PatientGoals" xml:space="preserve">
+    <value>Main Goals</value>
+  </data>
+  <data name="PatientMainConcerns" xml:space="preserve">
+    <value>Main Concerns</value>
+  </data>
+  <data name="PatientSex" xml:space="preserve">
+    <value>Sex</value>
+  </data>
+  <data name="ProfileStep1" xml:space="preserve">
+    <value>Step 1. Create Patient Profile</value>
+  </data>
+  <data name="ProfileStep2" xml:space="preserve">
+    <value>Step 2. Answer Questions About Current Disease</value>
+  </data>
+  <data name="ProfileStep3" xml:space="preserve">
+    <value>Step 3. Fill Out Medical History</value>
+  </data>
+  <data name="ProfileStep4" xml:space="preserve">
+    <value>Step 4. Upload Medical Records</value>
+  </data>
+  <data name="ProfileStep5" xml:space="preserve">
+    <value>Step 5. Confirm Service &amp; Make Payment</value>
+  </data>
+  <data name="ProfileNextPage" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="ProfilePreviousPage" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="ProfileTabOverallHealth" xml:space="preserve">
+    <value>Overall Health</value>
+  </data>
+  <data name="ProfileTabPatient" xml:space="preserve">
+    <value>Patient</value>
+  </data>
+  <data name="ProfileTabDiagnosis" xml:space="preserve">
+    <value>Diagnosis</value>
+  </data>
+  <data name="ProfileTabFamilyHistory" xml:space="preserve">
+    <value>Family History</value>
+  </data>
+  <data name="ProfileTabMakePayment" xml:space="preserve">
+    <value>Make Payment</value>
+  </data>
+  <data name="ProfileTabMedicalHistory" xml:space="preserve">
+    <value>Medical History</value>
+  </data>
+  <data name="ProfileTabPreTreatmentEvaluation" xml:space="preserve">
+    <value>Pre-TreatmentEvaluation</value>
+  </data>
+  <data name="ProfileTabProceduresReceived" xml:space="preserve">
+    <value>Procedures Received</value>
+  </data>
+  <data name="ProfileTabRequiredRecords" xml:space="preserve">
+    <value>Required Records</value>
+  </data>
+  <data name="ProfileTabServiceSummary" xml:space="preserve">
+    <value>Service Summary</value>
+  </data>
+  <data name="ProfileTabSocialHistory" xml:space="preserve">
+    <value>Social History</value>
+  </data>
+  <data name="ProfileTabStateOfDisease" xml:space="preserve">
+    <value>State of Disease</value>
+  </data>
+  <data name="ProfileTabSystemReview" xml:space="preserve">
+    <value>System Review</value>
+  </data>
+  <data name="ProfileTabUploadedRecords" xml:space="preserve">
+    <value>Uploaded Records</value>
+  </data>
+  <data name="ProfileTabUploadRecord" xml:space="preserve">
+    <value>Upload Record</value>
+  </data>
+  <data name="PlaceHolderMonthAndYearDiagnosed" xml:space="preserve">
+    <value>[Month and Year Diagonosed]</value>
+  </data>
+  <data name="PlaceHolderNameOfDisease" xml:space="preserve">
+    <value>[Name of Disease]</value>
+  </data>
+  <data name="AlertCreateProfileFirst" xml:space="preserve">
+    <value>Please create profile before moving to other steps</value>
+  </data>
+  <data name="AlertSystemIssue" xml:space="preserve">
+    <value>The web site is experiencing a problem, please try again or later</value>
+  </data>
+  <data name="EthnicGroupRequired" xml:space="preserve">
+    <value>Please select an ethnic group</value>
+  </data>
+  <data name="TreatmentReportIntroduction" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="TreatmentReportProcedures" xml:space="preserve">
+    <value>Procedures</value>
+  </data>
+  <data name="TreatmentReportSample" xml:space="preserve">
+    <value>Sample</value>
+  </data>
+  <data name="MonthPickerApr" xml:space="preserve">
+    <value>Apr</value>
+  </data>
+  <data name="MonthPickerAug" xml:space="preserve">
+    <value>Aug</value>
+  </data>
+  <data name="MonthPickerDec" xml:space="preserve">
+    <value>Dec</value>
+  </data>
+  <data name="MonthPickerFeb" xml:space="preserve">
+    <value>Feb</value>
+  </data>
+  <data name="MonthPickerJan" xml:space="preserve">
+    <value>Jan</value>
+  </data>
+  <data name="MonthPickerJul" xml:space="preserve">
+    <value>Jul</value>
+  </data>
+  <data name="MonthPickerJun" xml:space="preserve">
+    <value>Jun</value>
+  </data>
+  <data name="MonthPickerMar" xml:space="preserve">
+    <value>Mar</value>
+  </data>
+  <data name="MonthPickerMay" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="MonthPickerNov" xml:space="preserve">
+    <value>Noc</value>
+  </data>
+  <data name="MonthPickerOct" xml:space="preserve">
+    <value>Oct</value>
+  </data>
+  <data name="MonthPickerSep" xml:space="preserve">
+    <value>Sep</value>
+  </data>
+</root>

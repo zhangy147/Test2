@@ -1,0 +1,21 @@
+﻿<ul class="nav nav-tabs" id="current_condition_tabs">
+    <li class="active"><a href="#procedures_tab" data-toggle="tab">@Resources.ProfileTabProceduresReceived</a></li>
+    <li class="disabled"><a href="#factors_I_tab" data-toggle="">@Resources.ProfileTabStateOfDisease</a></li>
+    <li class="disabled"><a href="#factors_II_tab" data-toggle="">@Resources.ProfileTabPreTreatmentEvaluation</a></li>
+    <li class="disabled"><a href="#factors_III_tab" data-toggle="">@Resources.ProfileTabOverallHealth</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active well" id="procedures_tab">
+        @*@Html.Action("GetDiseaseProcedures", "PatientProfile")*@
+    </div>
+    <div class="tab-pane well" id="factors_I_tab">
+        @*@Html.Action("GetInitialTreatmentFactors", "PatientProfile")*@
+    </div>
+    <div class="tab-pane well" id="factors_II_tab">
+        @*@Html.Action("GetTreatmentFactorsForPatientCurrentState", "PatientProfile")*@
+    </div>
+    <div class="tab-pane well" id="factors_III_tab">
+        @*@Html.Action("GetTreatmentFactorsForPatientGeneralHealth", "PatientProfile")*@
+    </div>
+</div>
+

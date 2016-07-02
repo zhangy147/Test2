@@ -1,0 +1,46 @@
+﻿@model WebTest.ViewModels.MedicalRecordViewData
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "GET";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    options.LoadingElementDuration = 500;
+}
+@using (Ajax.BeginForm("UploadMedicalRecord", "MedicalRecord", options))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.RecordID, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("RecordID", (SelectList)ViewBag.UnUploadedRecords, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateReceived, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DateReceived, new { @class = "monthpicker form-control", @placeholder = "[Month and year received]" })
+                @Html.ValidationMessageFor(model => model.DateReceived)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IssuingHospital, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.IssuingHospital, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IssuingHospital)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RecordFiles, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="RecordFiles" name="RecordFiles" type="file" class="file-loading" multiple/>
+                @Html.ValidationMessageFor(model => model.RecordFiles)
+            </div>
+        </div>
+    </div>
+}

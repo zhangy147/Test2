@@ -1,0 +1,430 @@
+
+DEBUG 2016-01-27 21:10:20,722 14657ms tientProfileController DiseaseInformation - DiseaseID=3
+DEBUG 2016-01-27 21:10:20,745 14680ms tientProfileController DiseaseInformation - DiseaseID=3
+DEBUG 2016-01-27 21:10:20,749 14684ms tientProfileController DiseaseInformation - DateDiagnosed=01/2016
+DEBUG 2016-01-27 21:10:20,748 14683ms tientProfileController DiseaseInformation - DateDiagnosed=01/2016
+DEBUG 2016-01-27 21:10:20,784 14719ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:10:20,786 14721ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:10:21,296 15231ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:10:21,297 15232ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:10:35,243 29178ms tientProfileController PatientInformation - Patient Age=88
+DEBUG 2016-01-27 21:10:35,244 29179ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-27 21:10:35,244 29179ms tientProfileController PatientInformation - Patient Ethnic=7jhkhj
+DEBUG 2016-01-27 21:10:35,244 29179ms tientProfileController PatientInformation - Patient Concerns=l/.,m/.
+DEBUG 2016-01-27 21:10:35,244 29179ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-27 21:10:35,256 29191ms tientProfileController PatientInformation - Patient Age=88
+DEBUG 2016-01-27 21:10:35,257 29192ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-27 21:10:35,257 29192ms tientProfileController PatientInformation - Patient Ethnic=7jhkhj
+DEBUG 2016-01-27 21:10:35,258 29193ms tientProfileController PatientInformation - Patient Concerns=l/.,m/.
+DEBUG 2016-01-27 21:10:35,258 29193ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-27 21:10:42,413 36348ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:10:42,495 36430ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:10:49,539 43474ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:10:49,542 43477ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:10:49,702 43637ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:11:13,358 67293ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-27 21:11:13,360 67295ms edicalRecordController ploadMedicalRecord - MedicalRecordID=6
+DEBUG 2016-01-27 21:11:13,361 67296ms edicalRecordController ploadMedicalRecord - DateReceived=02/2016
+DEBUG 2016-01-27 21:11:13,361 67296ms edicalRecordController ploadMedicalRecord - Hospital=uiu
+DEBUG 2016-01-27 21:11:13,362 67297ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-27 21:11:13,362 67297ms edicalRecordController ploadMedicalRecord - fileName=Tulips.jpg
+DEBUG 2016-01-27 21:11:13,363 67298ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-27 21:12:57,761 171696ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:12:57,764 171699ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:13:06,969 180904ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:13:06,974 180909ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:13:09,051 182986ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:13:09,053 182988ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:13:09,068 183003ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:13:24,093 198028ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-27 21:13:24,094 198029ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-01-27 21:13:24,095 198030ms edicalRecordController ploadMedicalRecord - DateReceived=05/2016
+DEBUG 2016-01-27 21:13:24,095 198030ms edicalRecordController ploadMedicalRecord - Hospital=89898
+DEBUG 2016-01-27 21:13:24,096 198031ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-27 21:13:24,097 198032ms edicalRecordController ploadMedicalRecord - fileName=Penguins.jpg
+DEBUG 2016-01-27 21:13:24,098 198033ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-27 21:13:27,721 201656ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:13:27,728 201663ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:13:42,661 216596ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:13:42,662 216597ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:13:42,675 216610ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:13:55,041 228976ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-27 21:13:55,042 228977ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-01-27 21:13:55,043 228978ms edicalRecordController ploadMedicalRecord - DateReceived=05/2016
+DEBUG 2016-01-27 21:13:55,043 228978ms edicalRecordController ploadMedicalRecord - Hospital=khjkj
+DEBUG 2016-01-27 21:13:55,044 228979ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-27 21:13:55,044 228979ms edicalRecordController ploadMedicalRecord - fileName=Penguins.jpg
+DEBUG 2016-01-27 21:13:55,044 228979ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-27 21:14:15,006 248941ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:14:15,019 248954ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:15:21,842 315777ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:15:21,846 315781ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:15:37,349 331283ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:15:37,355 331289ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:15:39,490 333425ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:15:39,491 333426ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:15:39,500 333435ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:15:49,242 343177ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-27 21:15:49,243 343178ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-01-27 21:15:49,244 343179ms edicalRecordController ploadMedicalRecord - DateReceived=05/2016
+DEBUG 2016-01-27 21:15:49,245 343180ms edicalRecordController ploadMedicalRecord - Hospital=
+DEBUG 2016-01-27 21:15:49,246 343181ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-27 21:15:49,247 343182ms edicalRecordController ploadMedicalRecord - fileName=Tulips.jpg
+DEBUG 2016-01-27 21:15:49,247 343182ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-27 21:16:18,017 371952ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-27 21:16:18,018 371953ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-01-27 21:16:18,018 371953ms edicalRecordController ploadMedicalRecord - DateReceived=08/2016
+DEBUG 2016-01-27 21:16:18,018 371953ms edicalRecordController ploadMedicalRecord - Hospital=
+DEBUG 2016-01-27 21:16:18,019 371954ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-27 21:16:18,019 371954ms edicalRecordController ploadMedicalRecord - fileName=Tulips.jpg
+DEBUG 2016-01-27 21:16:18,020 371955ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-27 21:16:25,457 379392ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-01-27 21:16:25,460 379395ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-01-27 21:16:29,240 383174ms ServiceController      CollectPayment     - CollectPayment
+DEBUG 2016-01-27 21:23:03,554 291332ms tientProfileController DiseaseInformation - DiseaseID=4
+DEBUG 2016-01-27 21:23:03,573 291351ms tientProfileController DiseaseInformation - DiseaseID=4
+DEBUG 2016-01-27 21:23:03,585 291363ms tientProfileController DiseaseInformation - DateDiagnosed=01/2016
+DEBUG 2016-01-27 21:23:03,585 291363ms tientProfileController DiseaseInformation - DateDiagnosed=01/2016
+DEBUG 2016-01-27 21:23:03,616 291394ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:23:03,619 291397ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:23:03,660 291438ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:23:03,661 291439ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:23:16,898 304676ms tientProfileController PatientInformation - Patient Age=78
+DEBUG 2016-01-27 21:23:16,901 304679ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-27 21:23:16,901 304679ms tientProfileController PatientInformation - Patient Ethnic=ghgh
+DEBUG 2016-01-27 21:23:16,901 304679ms tientProfileController PatientInformation - Patient Concerns=
+DEBUG 2016-01-27 21:23:16,902 304680ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-27 21:23:16,913 304691ms tientProfileController PatientInformation - Patient Age=78
+DEBUG 2016-01-27 21:23:16,914 304692ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-27 21:23:16,914 304692ms tientProfileController PatientInformation - Patient Ethnic=ghgh
+DEBUG 2016-01-27 21:23:16,914 304692ms tientProfileController PatientInformation - Patient Concerns=
+DEBUG 2016-01-27 21:23:16,915 304693ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-27 21:23:20,188 307966ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-01-27 21:23:24,128 311906ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:23:24,209 311987ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:23:26,510 314288ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:23:26,511 314289ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:23:26,654 314432ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:25:58,574 466352ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:25:58,579 466357ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:26:00,956 468734ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:26:00,961 468739ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:26:02,824 470602ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:26:02,825 470603ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:26:02,836 470614ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:27:13,788 541566ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:27:13,802 541580ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:27:34,634 562412ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:27:34,640 562418ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:27:36,981 564759ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:27:36,984 564762ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:27:36,999 564777ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:28:00,304 588082ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-27 21:28:00,305 588083ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-01-27 21:28:00,306 588084ms edicalRecordController ploadMedicalRecord - DateReceived=05/2016
+DEBUG 2016-01-27 21:28:00,307 588085ms edicalRecordController ploadMedicalRecord - Hospital=Bejing Hospital
+DEBUG 2016-01-27 21:28:00,307 588085ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-27 21:28:00,308 588086ms edicalRecordController ploadMedicalRecord - fileName=Jellyfish.jpg
+DEBUG 2016-01-27 21:28:00,308 588086ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-27 21:28:18,525 606303ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-01-27 21:28:18,528 606306ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-01-27 21:28:22,817 610595ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:28:22,819 610597ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:28:22,832 610610ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:28:40,785 628563ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-27 21:28:40,786 628564ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-01-27 21:28:40,787 628565ms edicalRecordController ploadMedicalRecord - DateReceived=05/2016
+DEBUG 2016-01-27 21:28:40,859 628637ms edicalRecordController ploadMedicalRecord - Hospital=dsfsad
+DEBUG 2016-01-27 21:28:40,860 628638ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-27 21:28:40,861 628639ms edicalRecordController ploadMedicalRecord - fileName=Koala.jpg
+DEBUG 2016-01-27 21:28:40,861 628639ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-27 21:32:52,419 28957ms tientProfileController DiseaseInformation - DiseaseID=3
+DEBUG 2016-01-27 21:32:52,436 28974ms tientProfileController DiseaseInformation - DateDiagnosed=01/2016
+DEBUG 2016-01-27 21:32:52,462 29000ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-27 21:32:52,464 29002ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-27 21:33:02,676 39215ms tientProfileController PatientInformation - Patient Age=78
+DEBUG 2016-01-27 21:33:02,677 39216ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-27 21:33:02,678 39217ms tientProfileController PatientInformation - Patient Ethnic=jhkjhkj
+DEBUG 2016-01-27 21:33:02,678 39217ms tientProfileController PatientInformation - Patient Concerns=
+DEBUG 2016-01-27 21:33:02,679 39218ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-27 21:33:08,951 45489ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-01-27 21:33:26,430 62968ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is called
+DEBUG 2016-01-27 21:33:26,461 62999ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is returned
+DEBUG 2016-01-27 21:33:42,700 79238ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-27 21:33:42,796 79334ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-27 21:33:44,486 81024ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:33:44,487 81025ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:33:44,637 81175ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:33:50,413 86951ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-01-27 21:33:50,416 86954ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-01-27 21:33:52,178 88717ms ServiceController      CollectPayment     - CollectPayment
+DEBUG 2016-01-27 21:33:58,717 95255ms ServiceController      SavePayment        - SavePayment called
+DEBUG 2016-01-27 21:34:05,122 101660ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:34:05,124 101662ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-27 21:34:05,162 101700ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-27 21:41:59,988 20060ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-27 21:42:00,021 20093ms edicalRecordController ploadMedicalRecord - pProfielId=0
+DEBUG 2016-01-27 21:42:03,603 23675ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 10:52:31,681 26443ms tientProfileController DiseaseInformation - DiseaseID=3
+DEBUG 2016-01-30 10:52:31,729 26491ms tientProfileController DiseaseInformation - DateDiagnosed=05/2016
+DEBUG 2016-01-30 10:52:31,756 26518ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 10:52:31,758 26520ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 10:52:48,604 43366ms tientProfileController PatientInformation - Patient Age=87
+DEBUG 2016-01-30 10:52:48,605 43367ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-30 10:52:48,605 43367ms tientProfileController PatientInformation - Patient Ethnic=sdsd
+DEBUG 2016-01-30 10:52:48,605 43367ms tientProfileController PatientInformation - Patient Concerns=sds
+DEBUG 2016-01-30 10:52:48,605 43367ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-30 10:52:58,905 53667ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-01-30 10:53:15,515 70277ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is called
+DEBUG 2016-01-30 10:53:15,604 70366ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is returned
+DEBUG 2016-01-30 10:53:24,448 79210ms dicalHistoryController nAndAllergyHistory - PatientMedicationAndAllergyHistoryViewData is not null
+DEBUG 2016-01-30 10:53:24,449 79211ms dicalHistoryController nAndAllergyHistory - No medication history: False
+DEBUG 2016-01-30 10:53:24,449 79211ms dicalHistoryController nAndAllergyHistory - Medication history is null 
+DEBUG 2016-01-30 10:53:24,450 79212ms dicalHistoryController nAndAllergyHistory - Allergy history is null 
+DEBUG 2016-01-30 10:53:33,877 88639ms dicalHistoryController SaveFamilyHistory  - SaveFamilyHistory
+DEBUG 2016-01-30 10:53:33,878 88640ms dicalHistoryController SaveFamilyHistory  - size of input family history:7
+DEBUG 2016-01-30 10:53:44,502 99264ms dicalHistoryController SaveSocialHistory  - SaveSocialHistory is called
+DEBUG 2016-01-30 10:53:44,503 99265ms dicalHistoryController SaveSocialHistory  - Marital status in socialHistory:Married
+DEBUG 2016-01-30 10:53:44,556 99318ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 10:53:44,730 99492ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 10:53:48,270 103031ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 10:53:48,271 103032ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 10:53:48,461 103222ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 10:54:11,616 126378ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-30 10:54:11,617 126379ms edicalRecordController ploadMedicalRecord - MedicalRecordID=4
+DEBUG 2016-01-30 10:54:11,618 126380ms edicalRecordController ploadMedicalRecord - DateReceived=08/2016
+DEBUG 2016-01-30 10:54:11,619 126381ms edicalRecordController ploadMedicalRecord - Hospital=Beijing
+DEBUG 2016-01-30 10:54:11,620 126382ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-30 10:54:11,624 126386ms edicalRecordController ploadMedicalRecord - fileName=Lighthouse.jpg
+DEBUG 2016-01-30 10:54:11,626 126388ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-30 10:54:58,798 173559ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-01-30 10:54:58,801 173562ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-01-30 10:55:01,094 175856ms ServiceController      CollectPayment     - CollectPayment
+DEBUG 2016-01-30 11:02:17,361 612123ms ServiceController      SavePayment        - SavePayment called
+DEBUG 2016-01-30 11:02:48,948 643709ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:02:48,951 643712ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:02:48,982 643743ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 11:12:10,977 31503ms tientProfileController DiseaseInformation - DiseaseID=9
+DEBUG 2016-01-30 11:12:10,992 31518ms tientProfileController DiseaseInformation - DateDiagnosed=04/2016
+DEBUG 2016-01-30 11:12:11,015 31541ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 11:12:11,016 31542ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 11:12:24,534 45060ms tientProfileController PatientInformation - Patient Age=88
+DEBUG 2016-01-30 11:12:24,535 45061ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-30 11:12:24,536 45062ms tientProfileController PatientInformation - Patient Ethnic=sdsdsdsd
+DEBUG 2016-01-30 11:12:24,536 45062ms tientProfileController PatientInformation - Patient Concerns=xczcx 
+DEBUG 2016-01-30 11:12:24,536 45062ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-30 11:12:29,629 50155ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 11:12:29,723 50249ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 11:12:32,614 53141ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:12:32,615 53142ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:12:32,779 53306ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 11:15:53,058 253585ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 11:15:53,061 253588ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 11:15:55,115 255641ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 11:15:55,124 255650ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 11:16:01,259 261785ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:16:01,260 261786ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:16:01,271 261797ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 11:21:00,537 561064ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 11:21:00,541 561068ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 11:21:03,363 563890ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 11:21:03,370 563897ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 11:21:06,743 567270ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:21:06,744 567271ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:21:06,752 567279ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 11:30:25,716 1126243ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 11:30:25,719 1126246ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 11:30:36,286 1136813ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 11:30:36,291 1136818ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 11:30:40,024 1140551ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:30:40,025 1140552ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:30:40,032 1140559ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 11:32:19,858 1240384ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 11:32:19,862 1240388ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 11:32:21,777 1242304ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 11:32:21,781 1242308ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 11:32:27,007 1247534ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:32:27,008 1247535ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:32:27,021 1247548ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 11:33:10,559 1291085ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 11:33:10,563 1291089ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 11:33:12,421 1292947ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 11:33:12,426 1292952ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 11:33:14,533 1295060ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:33:14,535 1295062ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:33:14,550 1295077ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 11:37:03,189 1523716ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 11:37:03,193 1523720ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 11:37:07,200 1527727ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:37:07,201 1527728ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:37:07,214 1527741ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 11:37:34,526 1555052ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 11:37:34,530 1555056ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 11:37:37,223 1557750ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 11:37:37,228 1557755ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 11:37:39,948 1560475ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 11:37:39,949 1560476ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 11:37:39,958 1560485ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 12:12:57,119 3677646ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 12:12:57,120 3677647ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 12:13:12,263 3692790ms tientProfileController DiseaseInformation - DiseaseID=1
+DEBUG 2016-01-30 12:13:12,264 3692791ms tientProfileController DiseaseInformation - DateDiagnosed=01/2016
+DEBUG 2016-01-30 12:13:12,291 3692818ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 12:13:12,292 3692819ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 12:13:22,868 3703394ms tientProfileController PatientInformation - Patient Age=89
+DEBUG 2016-01-30 12:13:22,869 3703395ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-30 12:13:22,869 3703395ms tientProfileController PatientInformation - Patient Ethnic=xzxcz
+DEBUG 2016-01-30 12:13:22,869 3703395ms tientProfileController PatientInformation - Patient Concerns=
+DEBUG 2016-01-30 12:13:22,870 3703396ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-30 12:13:28,574 3709101ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-01-30 12:13:32,554 3713081ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is called
+DEBUG 2016-01-30 12:13:32,587 3713114ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is returned
+DEBUG 2016-01-30 12:13:35,378 3715905ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 12:13:35,383 3715910ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 12:13:39,731 3720257ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 12:13:39,732 3720258ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 12:13:39,740 3720266ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 12:13:59,413 3739939ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-30 12:13:59,414 3739940ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-01-30 12:13:59,416 3739942ms edicalRecordController ploadMedicalRecord - DateReceived=02/2016
+DEBUG 2016-01-30 12:13:59,417 3739943ms edicalRecordController ploadMedicalRecord - Hospital=zX
+DEBUG 2016-01-30 12:13:59,417 3739943ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-30 12:13:59,418 3739944ms edicalRecordController ploadMedicalRecord - fileName=Penguins.jpg
+DEBUG 2016-01-30 12:13:59,418 3739944ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-30 12:14:36,300 3776827ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-01-30 12:14:36,303 3776830ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-01-30 19:41:18,047 761937ms tientProfileController DiseaseInformation - DiseaseID=8
+DEBUG 2016-01-30 19:41:18,129 762019ms tientProfileController DiseaseInformation - DateDiagnosed=02/2016
+DEBUG 2016-01-30 19:41:18,166 762056ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-01-30 19:41:18,169 762059ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-01-30 19:41:44,948 788838ms tientProfileController PatientInformation - Patient Age=78
+DEBUG 2016-01-30 19:41:44,949 788839ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-01-30 19:41:44,950 788840ms tientProfileController PatientInformation - Patient Ethnic=mnmn
+DEBUG 2016-01-30 19:41:44,950 788840ms tientProfileController PatientInformation - Patient Concerns=hjb,nm
+DEBUG 2016-01-30 19:41:44,951 788841ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-01-30 19:42:19,382 823272ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-01-30 19:42:49,559 853448ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is called
+DEBUG 2016-01-30 19:42:49,689 853578ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is returned
+DEBUG 2016-01-30 19:43:02,220 866110ms dicalHistoryController nAndAllergyHistory - PatientMedicationAndAllergyHistoryViewData is not null
+DEBUG 2016-01-30 19:43:02,220 866110ms dicalHistoryController nAndAllergyHistory - No medication history: False
+DEBUG 2016-01-30 19:43:02,221 866111ms dicalHistoryController nAndAllergyHistory - Medication history is null 
+DEBUG 2016-01-30 19:43:02,221 866111ms dicalHistoryController nAndAllergyHistory - Allergy history is null 
+DEBUG 2016-01-30 19:43:33,665 897555ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-01-30 19:43:33,837 897727ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-01-30 19:43:54,098 917988ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-01-30 19:43:54,099 917989ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-01-30 19:43:54,290 918180ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-01-30 19:44:13,422 937312ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-01-30 19:44:13,423 937313ms edicalRecordController ploadMedicalRecord - MedicalRecordID=5
+DEBUG 2016-01-30 19:44:13,424 937314ms edicalRecordController ploadMedicalRecord - DateReceived=02/2016
+DEBUG 2016-01-30 19:44:13,424 937314ms edicalRecordController ploadMedicalRecord - Hospital=hhjuk
+DEBUG 2016-01-30 19:44:13,425 937315ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-01-30 19:44:13,425 937315ms edicalRecordController ploadMedicalRecord - fileName=Tulips.jpg
+DEBUG 2016-01-30 19:44:13,426 937316ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-01-30 19:44:36,475 960364ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-01-30 19:44:36,512 960401ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-01-30 19:44:45,400 969290ms ServiceController      CollectPayment     - CollectPayment
+DEBUG 2016-01-30 19:44:57,798 981688ms ServiceController      SavePayment        - SavePayment called
+DEBUG 2016-02-07 16:46:55,630 236945ms tientProfileController DiseaseInformation - DiseaseID=4
+DEBUG 2016-02-07 16:46:55,681 236996ms tientProfileController DiseaseInformation - DateDiagnosed=08/2016
+DEBUG 2016-02-07 16:46:55,717 237032ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-02-07 16:46:55,720 237035ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-02-07 16:47:07,482 248797ms tientProfileController PatientInformation - Patient Age=56
+DEBUG 2016-02-07 16:47:07,483 248798ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-02-07 16:47:07,483 248798ms tientProfileController PatientInformation - Patient Ethnic=dsfds
+DEBUG 2016-02-07 16:47:07,483 248798ms tientProfileController PatientInformation - Patient Concerns=xzc
+DEBUG 2016-02-07 16:47:07,484 248799ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-02-07 16:47:39,390 280706ms DiseaseStateController alTreatmentFactors - SaveTreatmentFactors: 2
+DEBUG 2016-02-07 16:47:39,443 280759ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-02-07 16:47:44,786 286101ms DiseaseStateController TreatmentFactorsII - SaveTreatmentFactors: 3
+DEBUG 2016-02-07 16:48:33,601 334916ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is called
+DEBUG 2016-02-07 16:48:33,768 335083ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is returned
+DEBUG 2016-02-07 16:48:53,317 354632ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-02-07 16:48:53,494 354809ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-02-07 16:49:03,252 364567ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-02-07 16:49:03,253 364568ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-02-07 16:49:03,476 364791ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-02-07 16:49:24,727 386043ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-02-07 16:49:24,728 386044ms edicalRecordController ploadMedicalRecord - MedicalRecordID=2
+DEBUG 2016-02-07 16:49:24,729 386045ms edicalRecordController ploadMedicalRecord - DateReceived=01/2016
+DEBUG 2016-02-07 16:49:24,730 386046ms edicalRecordController ploadMedicalRecord - Hospital=yt
+DEBUG 2016-02-07 16:49:24,730 386046ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-02-07 16:49:24,730 386046ms edicalRecordController ploadMedicalRecord - fileName=Lighthouse.jpg
+DEBUG 2016-02-07 16:49:24,731 386047ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-02-07 16:49:44,467 405782ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-02-07 16:49:44,498 405813ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-02-07 16:49:52,574 413889ms ServiceController      CollectPayment     - CollectPayment
+DEBUG 2016-02-07 16:50:00,913 422228ms ServiceController      SavePayment        - SavePayment called
+DEBUG 2016-05-26 20:27:20,467 109121ms tientProfileController DiseaseInformation - DiseaseID=4
+DEBUG 2016-05-26 20:27:20,569 109223ms tientProfileController DiseaseInformation - DateDiagnosed=08/2016
+DEBUG 2016-05-26 20:27:20,639 109293ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-05-26 20:27:20,641 109295ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-05-26 20:27:43,581 132235ms tientProfileController PatientInformation - Patient Age=44
+DEBUG 2016-05-26 20:27:43,582 132236ms tientProfileController PatientInformation - Patient Sex=Female
+DEBUG 2016-05-26 20:27:43,582 132236ms tientProfileController PatientInformation - Patient Ethnic=sd
+DEBUG 2016-05-26 20:27:43,583 132237ms tientProfileController PatientInformation - Patient Concerns=sds
+DEBUG 2016-05-26 20:27:43,583 132237ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-05-26 20:27:58,108 146762ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-05-26 20:28:14,045 162699ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is called
+DEBUG 2016-05-26 20:28:14,230 162884ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is returned
+DEBUG 2016-05-26 20:28:36,117 184771ms dicalHistoryController SaveFamilyHistory  - SaveFamilyHistory
+DEBUG 2016-05-26 20:28:36,118 184772ms dicalHistoryController SaveFamilyHistory  - size of input family history:7
+DEBUG 2016-05-26 20:28:46,949 195603ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-05-26 20:28:47,077 195731ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-05-26 20:28:49,878 198532ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-05-26 20:28:49,880 198534ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-05-26 20:28:50,078 198732ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-05-26 20:29:12,660 221314ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-05-26 20:29:12,661 221315ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-05-26 20:29:12,661 221315ms edicalRecordController ploadMedicalRecord - DateReceived=
+DEBUG 2016-05-26 20:29:12,661 221315ms edicalRecordController ploadMedicalRecord - Hospital=
+DEBUG 2016-05-26 20:29:12,662 221316ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-05-26 20:29:12,662 221316ms edicalRecordController ploadMedicalRecord - fileName=Penguins.jpg
+DEBUG 2016-05-26 20:29:12,662 221316ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-05-26 20:29:18,916 227570ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-05-26 20:29:18,955 227609ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-05-26 20:29:21,841 230495ms ServiceController      CollectPayment     - CollectPayment
+DEBUG 2016-05-26 20:29:34,488 243141ms ServiceController      SavePayment        - SavePayment called
+DEBUG 2016-05-28 11:30:07,909 194054ms tientProfileController DiseaseInformation - DiseaseID=4
+DEBUG 2016-05-28 11:30:08,030 194175ms tientProfileController DiseaseInformation - DateDiagnosed=05/2016
+DEBUG 2016-05-28 11:30:08,072 194217ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-05-28 11:30:08,076 194221ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-05-28 11:30:22,024 208168ms tientProfileController PatientInformation - Patient Age=56
+DEBUG 2016-05-28 11:30:22,025 208169ms tientProfileController PatientInformation - Patient Sex=Male
+DEBUG 2016-05-28 11:30:22,025 208169ms tientProfileController PatientInformation - Patient Ethnic=zxz
+DEBUG 2016-05-28 11:30:22,025 208169ms tientProfileController PatientInformation - Patient Concerns=xcx
+DEBUG 2016-05-28 11:30:22,026 208170ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-05-28 11:31:02,035 248180ms DiseaseStateController alTreatmentFactors - SaveTreatmentFactors: 2
+DEBUG 2016-05-28 11:31:02,099 248244ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-05-28 11:31:18,493 264638ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-05-28 11:31:18,609 264754ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-05-28 11:33:22,673 56721ms tientProfileController DiseaseInformation - DiseaseID=4
+DEBUG 2016-05-28 11:33:22,687 56735ms tientProfileController DiseaseInformation - DateDiagnosed=05/2016
+DEBUG 2016-05-28 11:33:22,714 56762ms tientProfileController PatientInformation - GetPatientInformation() is called
+DEBUG 2016-05-28 11:33:22,716 56764ms tientProfileController PatientInformation - return partial view of _PatientTab
+DEBUG 2016-05-28 11:33:33,720 67767ms tientProfileController PatientInformation - Patient Age=8
+DEBUG 2016-05-28 11:33:33,721 67768ms tientProfileController PatientInformation - Patient Sex=?
+DEBUG 2016-05-28 11:33:33,721 67768ms tientProfileController PatientInformation - Patient Ethnic=sd
+DEBUG 2016-05-28 11:33:33,721 67768ms tientProfileController PatientInformation - Patient Concerns=xc
+DEBUG 2016-05-28 11:33:33,722 67769ms tientProfileController PatientInformation - PatientProfileID in session is:2
+DEBUG 2016-05-28 11:33:39,748 73796ms DiseaseStateController TreatmentFactorsII - GetTreatmentFactorsII
+DEBUG 2016-05-28 11:33:55,182 89230ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is called
+DEBUG 2016-05-28 11:33:55,290 89338ms dicalHistoryController nAndAllergyHistory - GetMedicationAndAllergyHistory is returned
+DEBUG 2016-05-28 11:34:19,684 113731ms dicalHistoryController SaveSocialHistory  - SaveSocialHistory is called
+DEBUG 2016-05-28 11:34:19,685 113732ms dicalHistoryController SaveSocialHistory  - Marital status in socialHistory:Married
+DEBUG 2016-05-28 11:34:19,752 113799ms edicalRecordController iredMedicalRecords - diseaseId=4
+DEBUG 2016-05-28 11:34:19,884 113931ms edicalRecordController iredMedicalRecords - required medical records=7
+DEBUG 2016-05-28 11:34:22,867 116914ms edicalRecordController ploadMedicalRecord - ShowUploadMedicalRecord
+DEBUG 2016-05-28 11:34:22,868 116915ms edicalRecordController ploadMedicalRecord - pProfielId=2
+DEBUG 2016-05-28 11:34:23,053 117100ms edicalRecordController ploadMedicalRecord - ViewBag.UnUploadedRecords
+DEBUG 2016-05-28 11:34:34,878 128925ms edicalRecordController ploadMedicalRecord - UploadMedicalRecord
+DEBUG 2016-05-28 11:34:34,879 128926ms edicalRecordController ploadMedicalRecord - MedicalRecordID=1
+DEBUG 2016-05-28 11:34:34,879 128926ms edicalRecordController ploadMedicalRecord - DateReceived=
+DEBUG 2016-05-28 11:34:34,879 128926ms edicalRecordController ploadMedicalRecord - Hospital=
+DEBUG 2016-05-28 11:34:34,879 128926ms edicalRecordController ploadMedicalRecord - file is not null
+DEBUG 2016-05-28 11:34:34,880 128927ms edicalRecordController ploadMedicalRecord - fileName=Penguins.jpg
+DEBUG 2016-05-28 11:34:34,880 128927ms edicalRecordController ploadMedicalRecord - fileType=jpg
+DEBUG 2016-05-28 11:34:50,986 145034ms ServiceController      GetServiceSummary  - GetServiceSummary
+DEBUG 2016-05-28 11:34:51,035 145083ms ServiceController      GetServiceSummary  - serviceVDList Created
+DEBUG 2016-05-28 11:34:57,385 151432ms ServiceController      CollectPayment     - CollectPayment
+DEBUG 2016-05-28 11:35:04,327 158375ms ServiceController      SavePayment        - SavePayment called

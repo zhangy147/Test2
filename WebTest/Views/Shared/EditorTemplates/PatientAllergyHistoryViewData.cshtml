@@ -1,0 +1,25 @@
+﻿@model WebTest.ViewModels.PatientAllergyHistoryViewData
+@if (Model != null)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                @Html.LabelFor(x => x.AntigenName)
+                @Html.TextBoxFor(x => x.AntigenName, new { @class = "form-control" })
+            </div>
+            <div class="col-xs-4">
+                @Html.LabelFor(x => x.Reaction)
+                @Html.TextBoxFor(x => x.Reaction, new { @class = "form-control" })
+            </div>
+            <div class="col-xs-2">
+                @Html.LabelFor(x => x.YearDiscovered)
+                @Html.TextBoxFor(x => x.YearDiscovered, new { @class = "form-control" })
+            </div>
+            <div class="col-xs-3">
+                <a href="#" class="add-allergy"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                <a href="#" class="delete-allergy"><i class="glyphicon glyphicon-minus-sign"></i></a>
+            </div>
+        </div>
+    </div>
+}
+<br />

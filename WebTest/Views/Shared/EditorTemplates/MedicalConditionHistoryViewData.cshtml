@@ -1,0 +1,14 @@
+﻿@model WebTest.ViewModels.MedicalConditionHistoryViewData
+@if (Model != null)
+{
+    <div class="col-md-3">
+        @Html.HiddenFor(x => x.RequiredMedicalConditionHistoryID)
+        @Html.HiddenFor(x => x.MedicalCondition)
+        <div class="checkbox">
+            <label>
+                @Html.CheckBoxFor(x => x.IsSelected) @Model.MedicalCondition
+            </label>
+        </div>
+    </div>
+}
+

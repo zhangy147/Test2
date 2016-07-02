@@ -1,0 +1,42 @@
+﻿@model List<WebTest.ViewModels.PatientDiseaseHistoryViewData>
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.OnFailure = "OnAjaxFailure";
+    //options.OnBegin = "OnBegin";
+    options.OnSuccess = "OnAjaxSuccess";
+    //options.LoadingElementId = "ajax-loader";
+    options.LoadingElementDuration = 500;
+    //options.UpdateTargetId = "system_review_tab";
+    options.InsertionMode = InsertionMode.Replace;
+    
+}   
+@using (Ajax.BeginForm("SaveDiseaseHistory", "MedicalHistory", options))
+{
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                @{
+    int cnt = 0;
+    for (var i = 0; i < Model.Count(); i++)
+    //foreach (var disease in Model)
+    {
+        if (cnt++ % 4 == 0)
+        {
+            @:</tr><tr>
+            }
+            <td class="col-md-2">
+                @Html.HiddenFor( s => Model[i].DiseaseID)
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(d => Model[i].IsSelected)@Html.DisplayFor(s => Model[i].DiseaseName)
+                    </label>
+                </div>
+            </td>
+    }
+                @:</tr>
+                }
+            </tbody>
+</table>   
+}
+            
